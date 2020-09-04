@@ -1,0 +1,137 @@
+{{!< layout }}
+
+
+<!--<form action="/team_name_url/" method="post">
+    <label for="team_name">Enter name: </label>
+    <input id="team_name" type="text" name="name_field" value="Default name for team.">
+    <input type="submit" value="OK">
+</form>-->
+
+<h3>New Enter the issue key here (Ex: RP-1)</h3>
+<!--method="post" action="/ask"-->
+<form class="aui">
+    <label for="keyname">Search issues: </label>
+    <input 
+      class="text long-field" 
+      type="text" 
+      id="keyname" 
+      name="keyname" 
+      placeholder="Key-1">
+    <!--<div class="description">Enter the issue key here (Ex: RP-1)</div>-->
+    <!--<input type="submit" value="Search">
+    <button type="submit" form="nameform" value="Submit">Submit</button>-->
+    <button 
+      class="aui-button aui-button-primary"
+      type="submit" 
+      form="keyname" value="Search" onclick="formChanged()">Search</button>
+    
+</form>
+
+<!--<form action="http://127.0.0.1:5000/suggested/" method="get">
+    <input type="text" name="projectFilepath">
+    <input type="submit">
+</form>-->
+
+<h3>Target Issue</h3>
+
+<table id="issueTable">
+<thead>
+	<tr>
+	<th>Issue Type</th>
+	<th>Summary</th>
+  <th>Description</th>
+	<th>Key</th>
+  <th>Priority</th>
+  <th>Issue Creator</th>
+	</tr>
+</thead>
+<tbody>
+	<tr></tr>
+</tbody>
+</table>
+
+<p>Suggested Assignee List</p>
+<table id="assigneeTable">
+<thead>
+	<tr>
+	<th>Assignee List</th>
+	</tr>
+</thead>
+<tbody>
+	<tr id="r1"></tr>
+  <tr id="r2"></tr>
+  <tr id="r3"></tr>
+  <tr id="r4"></tr>
+  <tr id="r5"></tr>
+</tbody>
+</table>
+
+
+
+
+
+<!--<div id="issue"></div>
+
+<p>Suggested Assignee:</p>
+<p>a b c d e</p>
+
+<h1>{{title}}</h1>
+
+<table id="projects">
+<thead>
+	<tr>
+	<th>Logo</th>
+	<th>Key</th>
+	<th>Name</th>
+	</tr>
+</thead>
+<tbody>
+	<tr></tr>
+</tbody>
+</table>
+
+<button class="aui-button aui-button-primary">Test Button!</button>
+
+<button class="aui-button aui-dropdown2-trigger" aria-controls="sections-with-headings">
+    Sections with headings
+</button>
+
+<aui-dropdown-menu id="sections-with-headings">
+    <aui-section label="Favourites">
+        <aui-item-link href="https://amazon.com">Amazon</aui-item-link>
+        <aui-item-link href="https://apple.com">Apple</aui-item-link>
+        <aui-item-link href="https://facebook.com">Facebook</aui-item-link>
+        <aui-item-link href="https://google.com">Google</aui-item-link>
+    </aui-section>
+    <aui-section label="Recently visited">
+        <aui-item-link href="http://atlassian.com">Atlassian</aui-item-link>
+    </aui-section>
+</aui-dropdown-menu>
+
+<aui-spinner></aui-spinner>
+
+<span class="aui-icon aui-icon-SIZE aui-iconfont-TYPE">Alternative Text</span>
+
+
+<div class="aui-page-panel main-panel">
+  <div class="aui-page-panel-inner">
+    <section class="aui-page-panel-item">
+      <div class="aui-group">
+        <div class="aui-item">
+          <p>
+            Congratulations!
+            You've successfully created an Atlassian Connect app using the
+            <a href="https://bitbucket.org/atlassian/atlassian-connect-express" target="_parent">atlassian-connect-express</a>
+            client library.
+          </p>
+          <p>
+            <a class="aui-button aui-button-primary" href="https://bitbucket.org/atlassian/atlassian-connect-express" target="_parent">
+              Get Started
+              <span class="aui-icon aui-icon-small aui-iconfont-devtools-arrow-right">Arrow right</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>-->

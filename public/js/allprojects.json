@@ -1,0 +1,27 @@
+{
+    "self": "https://pg-req.atlassian.net/rest/api/3/project/search?_r=1588367305482&maxResults=50&startAt=0",
+    "maxResults": 50,
+    "startAt": 0,
+    "total": 1,
+    "isLast": true,
+    "values": [
+        {
+            "expand": "description,lead,issueTypes,url,projectKeys,permissions,insight",
+            "self": "https://pg-req.atlassian.net/rest/api/3/project/10001",
+            "id": "10001",
+            "key": "RP",
+            "name": "req-pg",
+            "avatarUrls": {
+                "48x48": "https://pg-req.atlassian.net/secure/projectavatar?pid=10001&avatarId=10406",
+                "24x24": "https://pg-req.atlassian.net/secure/projectavatar?size=small&s=small&pid=10001&avatarId=10406",
+                "16x16": "https://pg-req.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10001&avatarId=10406",
+                "32x32": "https://pg-req.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10001&avatarId=10406"
+            },
+            "projectTypeKey": "software",
+            "simplified": false,
+            "style": "classic",
+            "isPrivate": false,
+            "properties": {}
+        }
+    ]
+}

@@ -1,0 +1,196 @@
+{
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "10000",
+    "self": "https://pg-req.atlassian.net/rest/api/3/issue/10000",
+    "key": "RP-1",
+    "fields": {
+        "statuscategorychangedate": "2020-05-01T03:16:40.191-0700",
+        "issuetype": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/issuetype/10001",
+            "id": "10001",
+            "description": "Functionality or a feature expressed as a user goal.",
+            "iconUrl": "https://pg-req.atlassian.net/secure/viewavatar?size=medium&avatarId=10315&avatarType=issuetype",
+            "name": "Story",
+            "subtask": false,
+            "avatarId": 10315
+        },
+        "timespent": null,
+        "project": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/project/10001",
+            "id": "10001",
+            "key": "RP",
+            "name": "req-pg",
+            "projectTypeKey": "software",
+            "simplified": false,
+            "avatarUrls": {
+                "48x48": "https://pg-req.atlassian.net/secure/projectavatar?pid=10001&avatarId=10406",
+                "24x24": "https://pg-req.atlassian.net/secure/projectavatar?size=small&s=small&pid=10001&avatarId=10406",
+                "16x16": "https://pg-req.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10001&avatarId=10406",
+                "32x32": "https://pg-req.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10001&avatarId=10406"
+            }
+        },
+        "fixVersions": [],
+        "aggregatetimespent": null,
+        "resolution": null,
+        "customfield_10027": null,
+        "customfield_10028": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "watches": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/issue/RP-1/watchers",
+            "watchCount": 1,
+            "isWatching": true
+        },
+        "lastViewed": "2020-05-02T06:19:18.821-0700",
+        "created": "2020-05-01T03:16:39.851-0700",
+        "customfield_10020": null,
+        "customfield_10021": null,
+        "customfield_10022": null,
+        "customfield_10023": null,
+        "priority": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/priority/3",
+            "iconUrl": "https://pg-req.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+        },
+        "customfield_10024": [],
+        "customfield_10025": null,
+        "customfield_10026": null,
+        "labels": [],
+        "customfield_10016": null,
+        "customfield_10017": null,
+        "customfield_10018": {
+            "hasEpicLinkFieldDependency": false,
+            "showField": false,
+            "nonEditableReason": {
+                "reason": "PLUGIN_LICENSE_ERROR",
+                "message": "The Parent Link is only available to Jira Premium users."
+            }
+        },
+        "customfield_10019": "0|hzzzzz:",
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [],
+        "issuelinks": [],
+        "assignee": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/user?accountId=5e40f904ab90210c8de05347",
+            "accountId": "5e40f904ab90210c8de05347",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/08e36872dc06c8e7caafd1ac55b05ff2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-2.png&size=48&s=48",
+                "24x24": "https://secure.gravatar.com/avatar/08e36872dc06c8e7caafd1ac55b05ff2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-2.png&size=24&s=24",
+                "16x16": "https://secure.gravatar.com/avatar/08e36872dc06c8e7caafd1ac55b05ff2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-2.png&size=16&s=16",
+                "32x32": "https://secure.gravatar.com/avatar/08e36872dc06c8e7caafd1ac55b05ff2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-2.png&size=32&s=32"
+            },
+            "displayName": "Noshin Tahsin",
+            "active": true,
+            "timeZone": "America/Los_Angeles",
+            "accountType": "atlassian"
+        },
+        "updated": "2020-05-02T10:14:28.178-0700",
+        "status": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/status/10000",
+            "description": "",
+            "iconUrl": "https://pg-req.atlassian.net/",
+            "name": "To Do",
+            "id": "10000",
+            "statusCategory": {
+                "self": "https://pg-req.atlassian.net/rest/api/3/statuscategory/2",
+                "id": 2,
+                "key": "new",
+                "colorName": "blue-gray",
+                "name": "To Do"
+            }
+        },
+        "components": [],
+        "timeoriginalestimate": null,
+        "description": {
+            "version": 1,
+            "type": "doc",
+            "content": [
+                {
+                    "type": "paragraph",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "get the issue and show"
+                        }
+                    ]
+                }
+            ]
+        },
+        "customfield_10010": null,
+        "customfield_10014": null,
+        "customfield_10015": null,
+        "timetracking": {},
+        "customfield_10005": null,
+        "customfield_10006": null,
+        "security": null,
+        "customfield_10007": null,
+        "customfield_10008": null,
+        "customfield_10009": null,
+        "aggregatetimeestimate": null,
+        "attachment": [],
+        "summary": "issue-1",
+        "creator": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/user?accountId=5e299526bf04010e70c42927",
+            "accountId": "5e299526bf04010e70c42927",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/b130bf3b69479967b0fc12b90ff54231?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-4.png&size=48&s=48",
+                "24x24": "https://secure.gravatar.com/avatar/b130bf3b69479967b0fc12b90ff54231?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-4.png&size=24&s=24",
+                "16x16": "https://secure.gravatar.com/avatar/b130bf3b69479967b0fc12b90ff54231?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-4.png&size=16&s=16",
+                "32x32": "https://secure.gravatar.com/avatar/b130bf3b69479967b0fc12b90ff54231?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-4.png&size=32&s=32"
+            },
+            "displayName": "Noshin Tahsin",
+            "active": true,
+            "timeZone": "America/Los_Angeles",
+            "accountType": "atlassian"
+        },
+        "subtasks": [],
+        "reporter": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/user?accountId=5e299526bf04010e70c42927",
+            "accountId": "5e299526bf04010e70c42927",
+            "avatarUrls": {
+                "48x48": "https://secure.gravatar.com/avatar/b130bf3b69479967b0fc12b90ff54231?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-4.png&size=48&s=48",
+                "24x24": "https://secure.gravatar.com/avatar/b130bf3b69479967b0fc12b90ff54231?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-4.png&size=24&s=24",
+                "16x16": "https://secure.gravatar.com/avatar/b130bf3b69479967b0fc12b90ff54231?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-4.png&size=16&s=16",
+                "32x32": "https://secure.gravatar.com/avatar/b130bf3b69479967b0fc12b90ff54231?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FNT-4.png&size=32&s=32"
+            },
+            "displayName": "Noshin Tahsin",
+            "active": true,
+            "timeZone": "America/Los_Angeles",
+            "accountType": "atlassian"
+        },
+        "aggregateprogress": {
+            "progress": 0,
+            "total": 0
+        },
+        "customfield_10000": "{}",
+        "customfield_10001": null,
+        "customfield_10002": null,
+        "customfield_10003": null,
+        "customfield_10004": null,
+        "environment": null,
+        "duedate": null,
+        "progress": {
+            "progress": 0,
+            "total": 0
+        },
+        "comment": {
+            "comments": [],
+            "maxResults": 0,
+            "total": 0,
+            "startAt": 0
+        },
+        "votes": {
+            "self": "https://pg-req.atlassian.net/rest/api/3/issue/RP-1/votes",
+            "votes": 0,
+            "hasVoted": false
+        },
+        "worklog": {
+            "startAt": 0,
+            "maxResults": 20,
+            "total": 0,
+            "worklogs": []
+        }
+    }
+}

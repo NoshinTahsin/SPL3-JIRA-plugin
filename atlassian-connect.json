@@ -1,0 +1,34 @@
+{
+    "key": "jira-assignee-suggestion",
+    "name": "Jira Assignee Suggestion",
+    "description": "A Connect app that suggests assignees for an issue",
+    "vendor": {
+        "name": "Atlassian Developers",
+        "url": "https://developer.atlassian.com/"
+	},
+    "baseUrl": "{{localBaseUrl}}",
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed"
+    },
+    "scopes": [
+        "READ"
+    ],
+    "modules": {
+        "generalPages": [
+            {
+                "key": "suggestion",
+                "location": "system.top.navigation.bar",
+                "name": {
+                    "value": "Assignee Suggestion"
+                },
+                "url": "/suggestion",
+                "conditions": [{
+                    "condition": "user_is_logged_in"
+                }]
+            }
+        ]
+    }
+}
