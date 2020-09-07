@@ -34,9 +34,7 @@ var cors = require('cors')
 // Bootstrap Express and atlassian-connect-express
 const app = express();
 app.use(cors())
-app.use(cors({
-  credentials: true,
-}));
+
 //app.use(cors());
 const addon = ace(app);
 
