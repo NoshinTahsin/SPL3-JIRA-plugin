@@ -33,7 +33,7 @@ import routes from './routes';
 
 // Bootstrap Express and atlassian-connect-express
 const app = express();
-app.use(cors());
+//app.use(cors());
 const addon = ace(app);
 
 // See config.json
