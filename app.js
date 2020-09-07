@@ -3,7 +3,7 @@
 // Express is the underlying that atlassian-connect-express uses:
 // https://expressjs.com
 import express from 'express';
-import cors from 'cors';
+//import cors from 'cors';
 
 // https://expressjs.com/en/guide/using-middleware.html
 import bodyParser from 'body-parser'; //Parse HTTP request body. third-party middleware
@@ -30,17 +30,21 @@ import helmet from 'helmet';
 
 // Routes live here; this is the C in MVC
 import routes from './routes';
-
+var cors = require('cors')
 // Bootstrap Express and atlassian-connect-express
 const app = express();
+app.use(cors())
+app.use(cors({
+  credentials: true,
+}));
 //app.use(cors());
 const addon = ace(app);
 
 // See config.json
 const port = addon.config.port();
-if (port == null || port == "") {
-  port = 8000;
-}
+
+//if (port == null || port == "") {  port = 8000;
+//}
 app.set('port', port);
 
 // Configure Handlebars
@@ -62,6 +66,7 @@ app.use(helmet.hsts({
 }));
 app.use(helmet.referrerPolicy({
   policy: ['origin-when-cross-origin']
+  //policy: ['no-referrer']
 }));
 
 // Include request parsers

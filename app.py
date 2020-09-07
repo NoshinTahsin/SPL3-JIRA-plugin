@@ -20,6 +20,7 @@ def index():
 
 
 @app.route("/suggested/", methods = ['GET'])
+
 def suggested():
     #global weather
     #global assignees

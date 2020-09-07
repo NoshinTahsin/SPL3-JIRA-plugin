@@ -8,7 +8,7 @@ export default function routes(app, addon) {
 
     // Redirect root path to /atlassian-connect.json,
     // which will be served by atlassian-connect-express.
-  
+
     // This is an example route used by "generalPages" module (see atlassian-connect.json).
     // Verify that the incoming request is authenticated with Atlassian Connect.
     app.get('/hello-world', addon.authenticate(), (req, res) => {
