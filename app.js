@@ -3,6 +3,7 @@
 // Express is the underlying that atlassian-connect-express uses:
 // https://expressjs.com
 import express from 'express';
+import cors from 'cors';
 
 // https://expressjs.com/en/guide/using-middleware.html
 import bodyParser from 'body-parser'; //Parse HTTP request body. third-party middleware
@@ -32,10 +33,14 @@ import routes from './routes';
 
 // Bootstrap Express and atlassian-connect-express
 const app = express();
+app.use(cors());
 const addon = ace(app);
 
 // See config.json
 const port = addon.config.port();
+if (port == null || port == "") {
+  port = 8000;
+}
 app.set('port', port);
 
 // Configure Handlebars

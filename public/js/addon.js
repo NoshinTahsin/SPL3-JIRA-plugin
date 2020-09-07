@@ -3,7 +3,8 @@
 function formChanged(){
     var keyname = document.getElementsByName("keyname")[0].value;
     //alert(keyname);
-    var suggestionUrl  = "http://127.0.0.1:5000/suggested/";
+    //var suggestionUrl  = "http://127.0.0.1:5000/suggested/";
+    var suggestionUrl = "https://cors-anywhere.herokuapp.com/my-subdomain.herokuapp.com/suggested/"
     suggestionUrl=suggestionUrl+"?keyname=";
     suggestionUrl=suggestionUrl+keyname;
     //alert(suggestionUrl);
