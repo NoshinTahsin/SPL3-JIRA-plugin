@@ -4,7 +4,7 @@ function formChanged(){
     var keyname = document.getElementsByName("keyname")[0].value;
     //alert(keyname);
     //var suggestionUrl  = "http://127.0.0.1:5000/suggested/";
-    var suggestionUrl = "https://my-subdomain.herokuapp.com/suggested/"
+    var suggestionUrl = "https://thingproxy.freeboard.io/fetch/https://my-subdomain.herokuapp.com/suggested/"
     suggestionUrl=suggestionUrl+"?keyname=";
     suggestionUrl=suggestionUrl+keyname;
     //alert(suggestionUrl);
