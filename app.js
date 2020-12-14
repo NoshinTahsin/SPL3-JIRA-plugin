@@ -30,10 +30,10 @@ import helmet from 'helmet';
 
 // Routes live here; this is the C in MVC
 import routes from './routes';
-var cors_proxy = require('cors-anywhere');
+//var cors_proxy = require('cors-anywhere');
 // Bootstrap Express and atlassian-connect-express
 const app = express();
-app.use(cors())
+//app.use(cors())
 
 //app.use(cors());
 const addon = ace(app);

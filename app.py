@@ -28,11 +28,12 @@ def suggested():
     #projectpath = request.form['projectFilepath']
     key=request.args.get('keyname')
     print(key)
-    a=["new-lucille.hogan","isabel.richardson","marsha.cook","joshua.maples","jerome.johnson"]
+    a=["new-lucille.hogan-2","isabel.richardson","marsha.cook","joshua.maples","jerome.johnson"]
     return jsonify([a])
     #global assignees
     #convert=conversion()
     #return convert
+
 
 if __name__ == '__main__':
     app.run(debug=True)
