@@ -146,7 +146,7 @@ function showIssue(){
 function buttonClicked() {
   valueToSet = document.getElementById("r1").innerHTML;
   alert(valueToSet);
-  document.getElementById("r1").innerHTML = "Assignee Changed";
+  document.getElementById("r1").innerHTML = "Assignee Changed!";
 
   
 }
