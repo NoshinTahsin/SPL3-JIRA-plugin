@@ -18,6 +18,8 @@ def index():
 
  #   return render_template("views/activity.hbs")
 
+def getList():
+    return ["new-lucille.hogan-2","isabel.richardson","marsha.cook","joshua.maples","jerome.johnson"]
 
 @app.route("/suggested/", methods = ['GET'])
 
@@ -28,7 +30,7 @@ def suggested():
     #projectpath = request.form['projectFilepath']
     key=request.args.get('keyname')
     print(key)
-    a=["new-lucille.hogan-2","isabel.richardson","marsha.cook","joshua.maples","jerome.johnson"]
+    a=getList()
     return jsonify([a])
     #global assignees
     #convert=conversion()
