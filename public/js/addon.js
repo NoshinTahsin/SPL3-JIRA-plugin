@@ -1,5 +1,4 @@
 /* App frontend script */
-
 function formChanged(){
     var keyname = document.getElementsByName("keyname")[0].value;
     alert(keyname);
@@ -145,8 +144,19 @@ function showIssue(){
 
 function buttonClicked() {
   valueToSet = document.getElementById("r1").innerHTML;
-  alert(valueToSet);
-  document.getElementById("r1").innerHTML = "Assignee Changed!";
+  //alert(valueToSet);
+  alert("Assignee Changed")
+
+  //document.getElementById("r1").innerHTML = "Assignee Changed!";
+  var changeAssigneeUrl  = "http://127.0.0.1:5000/change/";
+  AP.request(changeAssigneeUrl, {
+    success: function(responseText){
+    var rt = JSON.parse(responseText);
+
+    }
+  });
+
+
 
   
 }

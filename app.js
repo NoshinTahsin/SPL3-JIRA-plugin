@@ -27,7 +27,6 @@ import http from 'http';
 import path from 'path';
 import os from 'os';
 import helmet from 'helmet';
-
 // Routes live here; this is the C in MVC
 import routes from './routes';
 //var cors_proxy = require('cors-anywhere');
