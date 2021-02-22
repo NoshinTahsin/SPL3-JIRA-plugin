@@ -324,9 +324,9 @@ def suggested():
 @app.route("/change/", methods = ['GET'])
 
 def change():
-    url = "https://pg-req.atlassian.net/rest/api/3/issue/SAAJ-7/assignee"
+    url = "https://pg-req.atlassian.net/rest/api/3/issue/SAAJ-8/assignee"
 
-    auth = HTTPBasicAuth("bsse0914@iit.du.ac.bd", "eVoC0zpgDFI1lS6B0jFZ7DB6")
+    auth = HTTPBasicAuth("bsse0914@iit.du.ac.bd", "0EkaiQ0u0Zw5nWJkI8iG0D65")
 
     headers = {
         "Accept": "application/json",
@@ -334,7 +334,7 @@ def change():
     }
 
     payload = json.dumps( {
-        "accountId": "5e9412627bc0680c2ca4dd39"
+        "accountId": "5e299526bf04010e70c42927"
     } )
 
     response = requests.request(
