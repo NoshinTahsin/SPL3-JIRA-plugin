@@ -129,8 +129,6 @@ function formChanged(){
     
             //AssigneeTable.deleteRow(1);
         }*/
-    
-    
         }
     });
 

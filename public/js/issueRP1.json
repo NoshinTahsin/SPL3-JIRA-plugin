@@ -12,7 +12,7 @@
             "iconUrl": "https://pg-req.atlassian.net/secure/viewavatar?size=medium&avatarId=10315&avatarType=issuetype",
             "name": "Story",
             "subtask": false,
-            "avatarId": 10315
+            "avatarId": 10315 
         },
         "timespent": null,
         "project": {

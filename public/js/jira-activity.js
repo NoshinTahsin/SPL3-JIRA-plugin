@@ -8,7 +8,6 @@ AP.request('/rest/api/3/project/search', {
         
 		for (var x = 0; x < data.values.length; x++) {
         var value = data.values[x];
-        //console.log("Yesss");
 		//console.log(value);
 		var newRow = projectTable.insertRow(-1);
 		var newCellLogo = newRow.insertCell(0)

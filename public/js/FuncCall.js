@@ -1,6 +1,5 @@
 class FuncCall{
     constructor(){
-
     }
     
     funcCall() {

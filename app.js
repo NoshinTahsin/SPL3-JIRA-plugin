@@ -4,7 +4,6 @@
 // https://expressjs.com
 import express from 'express';
 //import cors from 'cors';
-
 // https://expressjs.com/en/guide/using-middleware.html
 import bodyParser from 'body-parser'; //Parse HTTP request body. third-party middleware
 import compression from 'compression'; //Compress HTTP responses. third-party middleware

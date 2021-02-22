@@ -4,6 +4,7 @@
     // "development" is the default environment.
     // To change, set NODE_ENV (http://expressjs.com/api.html#app.configure).
     //when should I change this? need to check.
+    //
     "development": {
         // Port the Express server will listen on.
         "port": 3000,
