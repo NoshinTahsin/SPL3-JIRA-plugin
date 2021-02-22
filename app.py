@@ -321,7 +321,8 @@ def suggested():
     #convert=conversion()
     #return convert
 
-@app.route("/change/", methods = ['GET'])
+#@app.route("/change/", methods = ['GET'])
+@app.route("/change/", methods = ['PUT'])
 
 def change():
     url = "https://pg-req.atlassian.net/rest/api/3/issue/SAAJ-8/assignee"
