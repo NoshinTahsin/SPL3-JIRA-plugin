@@ -1,4 +1,4 @@
-AP.request('/rest/api/3/issue/SAAJ-8', {
+AP.request('/rest/api/3/issue/SAAJ-5', {
 	success: function(responseText){
 		//var projectTable = document.getElementById("projects");
     //var data = JSON.parse(responseText);
