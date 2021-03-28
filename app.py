@@ -181,9 +181,9 @@ def process_new_issue(key):
     newterm_dev_map={}
     global dev_termInfo
     dev_termInfo={}
-    print("%%%%%%%%%%%%%%%%%%%%%%%%%%%"+str(key))
+    print("%%%%%%%%%%%%%%%%%%%%%%%%%%"+str(key))
 
-    new_issue=jira.issue('SAAJ-7')
+    new_issue=jira.issue(key)
     new_des=new_issue.fields.description
 
     new_des=remove_punctuation(new_des)
@@ -314,7 +314,7 @@ def hello():
     else:
         message = {'greeting':'Hello from Flask!'}
         return jsonify(message)  # serialize and use JSON headers
-        
+
 ans=None
 #@app.route("/suggested/", methods = ['GET'])
 @app.route('/suggested/', methods =["GET", "POST"]) 
