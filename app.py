@@ -301,25 +301,49 @@ def getList():
     return a
     #return ["new-lucille.hogan-2","isabel.richardson","marsha.cook","joshua.maples","jerome.johnson"]
 
-@app.route("/suggested/", methods = ['GET'])
+@app.route('/hello', methods=['GET', 'POST'])
+def hello():
 
-def suggested():
+    # POST request
+    if request.method == 'POST':
+        print('Incoming..')
+        print(request.get_json())  # parse as JSON
+        return 'OK', 200
+
+    # GET request
+    else:
+        message = {'greeting':'Hello from Flask!'}
+        return jsonify(message)  # serialize and use JSON headers
+        
+ans=None
+#@app.route("/suggested/", methods = ['GET'])
+@app.route('/suggested/', methods =["GET", "POST"]) 
+
+def suggested(ans=""):
     #global weather
     #global assignees
     #convert=conversion()
     #projectpath = request.form['projectFilepath']
-    key=request.args.get('keyname')
-    print(key)
-    data_processing()
-    process_new_issue(key)
-    global sorted_dev_score
-    sorted_dev_score = calculate_devscore()
+    if request.method == "GET":
+        key=request.args.get('keyname')
+        print(key)
+        data_processing()
+        process_new_issue(key)
+        global sorted_dev_score
+        sorted_dev_score = calculate_devscore()
 
-    a=getList()
-    return jsonify([a])
+        a=getList()
+        ans=jsonify([a])
+
+        return ans
+    #return render_template(
+    #    "activity.hbs",
+    #    result=ans
+    #) 
+    #return jsonify([a])
     #global assignees
     #convert=conversion()
-    #return convert
+    #return convert 
 
 #@app.route("/change/", methods = ['GET'])
 @app.route("/change/", methods = ['PUT'])
