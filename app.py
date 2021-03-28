@@ -20,7 +20,7 @@ app = Flask(__name__)
 CORS(app)
 
 from jira import JIRA
-jira = JIRA(basic_auth=('bsse0914@iit.du.ac.bd', '0EkaiQ0u0Zw5nWJkI8iG0D65'), options={'server':'https://pg-req.atlassian.net'})
+jira = JIRA(basic_auth=('bsse0914@iit.du.ac.bd', '4MsH8F6gkCV3yMwY8ZHs8D47'), options={'server':'https://pg-req.atlassian.net'})
 
 projects = jira.projects()
 num_of_projects=len(projects)
