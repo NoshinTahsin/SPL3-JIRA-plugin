@@ -15,3 +15,9 @@
   padding: 20px 40px 20px 0;
   height: 100px;
 }
+
+#r1:hover,#r2:hover,#r3:hover,#r4:hover,#r5:hover {
+  background-color:#6299c7;
+  color: white;
+}
+
