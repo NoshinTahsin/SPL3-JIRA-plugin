@@ -9,6 +9,7 @@ from nltk.tokenize import word_tokenize
 #stemming
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
+from jira import JIRA
 import requests
 from requests.auth import HTTPBasicAuth
  
@@ -346,18 +347,26 @@ def suggested(ans=""):
     #return convert 
 
 #@app.route("/change/", methods = ['GET'])
-@app.route("/change/", methods = ['PUT'])
+rt = None
 
-def change():
-    url = "https://pg-req.atlassian.net/rest/api/3/issue/SAAJ-8/assignee"
+@app.route("/change/", methods = ["GET","POST","PUT"])
 
-    auth = HTTPBasicAuth("bsse0914@iit.du.ac.bd", "0EkaiQ0u0Zw5nWJkI8iG0D65")
+def change(rt=""):
+    #if request.method == "PUT":
+    #    print("9999999999999999999999999999999999999999999999999999999999999999999")
+    key=request.args.get('keyname')
+    print("&&&&&&&&&&&&KeyToChange: ",key)
+    url = "https://pg-req.atlassian.net/rest/api/3/issue/"
+    url = url + key +"/assignee"
+
+    auth = HTTPBasicAuth("bsse0914@iit.du.ac.bd", "4MsH8F6gkCV3yMwY8ZHs8D47")
 
     headers = {
         "Accept": "application/json",
         "Content-Type": "application/json"
     }
 
+    #need to add the target account id here
     payload = json.dumps( {
         "accountId": "5e299526bf04010e70c42927"
     } )
@@ -372,6 +381,7 @@ def change():
 
     print(response.text)
     rt=response.text
+    
     return rt
 
 

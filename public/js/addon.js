@@ -1,7 +1,11 @@
 /* App frontend script */
 
+var a_list=[];
+var keyname="";
+
 function formChanged(){
-  var keyname = document.getElementsByName("keyname")[0].value;
+  
+  keyname = document.getElementsByName("keyname")[0].value;
   alert(keyname);
   var suggestionUrl  = "http://127.0.0.1:5000/suggested/";
   suggestionUrl=suggestionUrl+"?keyname=";
@@ -55,7 +59,7 @@ function formChanged(){
   //working
   AP.request(suggestionUrl, {
       success: function(responseText){
-      var a_list = JSON.parse(responseText);
+      a_list = JSON.parse(responseText);
       alert(a_list);
 
       tempImage = "<img src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' width='24'>";
@@ -103,19 +107,39 @@ function formChanged(){
 
       }
   });  
-
-
-  
 }
 
 function showIssue(){
 
 }
 
-function rowClicked(){
-  alert("row clicked");
-}
+function rowClicked(id){
+  //var rowID = x.id;
+  //alert(a_list);
+  var rowValue = document.getElementById(id).innerHTML;
+  //alert("row clicked for "+rowValue+" row ID: "+id);
+  if (id=="r1"){
+    //valueToSet = document.getElementById("name_r1").innerHTML;
+    nameToSet = a_list[0][0];
+    idToSet = a_list[1][0];
+    alertText = nameToSet+idToSet;
+  }
 
+  var changeAssigneeUrl  = "http://127.0.0.1:5000/change/";
+  changeAssigneeUrl = changeAssigneeUrl + "?keyname=";
+  changeAssigneeUrl = changeAssigneeUrl + keyname;
+
+  alert(changeAssigneeUrl);
+
+  AP.request(changeAssigneeUrl, {
+    success: function(responseText){
+    alert("Change hoise to");
+    var rt = JSON.parse(responseText);
+    alert(rt);
+    }
+  });
+
+}
 
 function buttonClicked() {
   valueToSet = document.getElementById("r1").innerHTML;
@@ -124,10 +148,12 @@ function buttonClicked() {
 
   //document.getElementById("r1").innerHTML = "Assignee Changed!";
   var changeAssigneeUrl  = "http://127.0.0.1:5000/change/";
+  changeAssigneeUrl = changeAssigneeUrl + "?keyname=";
+  changeAssigneeUrl = changeAssigneeUrl + keyname;
   AP.request(changeAssigneeUrl, {
     success: function(responseText){
     var rt = JSON.parse(responseText);
-
+    alert(rt);
     }
   });
 
