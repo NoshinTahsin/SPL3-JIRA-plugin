@@ -356,8 +356,14 @@ def change(rt=""):
     #    print("9999999999999999999999999999999999999999999999999999999999999999999")
     key=request.args.get('keyname')
     print("&&&&&&&&&&&&KeyToChange: ",key)
+
+    toAssign=request.args.get('idToAssign')
+    print("&&&&&&&&&&&&toAssign: ",toAssign)
+
     url = "https://pg-req.atlassian.net/rest/api/3/issue/"
     url = url + key +"/assignee"
+
+    #toAssign = "5e299526bf04010e70c42927"
 
     auth = HTTPBasicAuth("bsse0914@iit.du.ac.bd", "4MsH8F6gkCV3yMwY8ZHs8D47")
 
@@ -368,7 +374,7 @@ def change(rt=""):
 
     #need to add the target account id here
     payload = json.dumps( {
-        "accountId": "5e299526bf04010e70c42927"
+        "accountId": toAssign
     } )
 
     response = requests.request(

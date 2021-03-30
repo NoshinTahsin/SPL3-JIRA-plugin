@@ -116,18 +116,56 @@ function showIssue(){
 function rowClicked(id){
   //var rowID = x.id;
   //alert(a_list);
-  var rowValue = document.getElementById(id).innerHTML;
-  //alert("row clicked for "+rowValue+" row ID: "+id);
-  if (id=="r1"){
+  var idToAssign = "";
+  //var rowValue = document.getElementById(id).innerHTML;
+  alert("row clicked for rowID: "+id);
+  if (String(id)=="r1"){
+    alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
     nameToSet = a_list[0][0];
-    idToSet = a_list[1][0];
-    alertText = nameToSet+idToSet;
+    idToAssign = a_list[0][5];
+    alert(nameToSet);
   }
+
+  else if (String(id)=="r2"){
+    alert("dhukse");
+    //valueToSet = document.getElementById("name_r1").innerHTML;
+    nameToSet = a_list[0][1];
+    idToAssign = a_list[0][6];
+    alert(nameToSet);
+  }
+
+  else if (String(id)=="r3"){
+    alert("dhukse");
+    //valueToSet = document.getElementById("name_r1").innerHTML;
+    nameToSet = a_list[0][2];
+    idToAssign = a_list[0][7];
+    alert(nameToSet);
+  }
+
+  else if (String(id)=="r4"){
+    alert("dhukse");
+    //valueToSet = document.getElementById("name_r1").innerHTML;
+    nameToSet = a_list[0][3];
+    idToAssign = a_list[0][8];
+    alert(nameToSet);
+  }
+
+  else if (String(id)=="r5"){
+    alert("dhukse");
+    //valueToSet = document.getElementById("name_r1").innerHTML;
+    nameToSet = a_list[0][4];
+    idToAssign = a_list[0][9];
+    alert(nameToSet);
+  }
+
+  //var idToAssign = "5e299526bf04010e70c42927";
 
   var changeAssigneeUrl  = "http://127.0.0.1:5000/change/";
   changeAssigneeUrl = changeAssigneeUrl + "?keyname=";
   changeAssigneeUrl = changeAssigneeUrl + keyname;
+  changeAssigneeUrl = changeAssigneeUrl + "&idToAssign=";
+  changeAssigneeUrl = changeAssigneeUrl + idToAssign;
 
   alert(changeAssigneeUrl);
 
