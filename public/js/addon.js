@@ -239,7 +239,7 @@ function formSubmitted(){
   }, 1000);
 }
 
-function openCity(evt, cityName) {
+function openTab(evt, tabName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
@@ -249,14 +249,22 @@ function openCity(evt, cityName) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
 
-  if(cityName=="Suggestion"){
-  	document.getElementById(cityName).style.display = "block";
+  if(tabName=="Suggestion"){
+  	document.getElementById(tabName).style.display = "block";
+    document.getElementById("ShowAllUnassigned").style.display = "none";
     document.getElementById("NewDev").style.display = "none";
   }
-  
-  if(cityName=="NewDev"){
-  	document.getElementById(cityName).style.display = "block";
+
+  if(tabName=="ShowAllUnassigned"){
+  	document.getElementById(tabName).style.display = "block";
     document.getElementById("Suggestion").style.display = "none";
+    document.getElementById("NewDev").style.display = "none";
+  }
+
+  if(tabName=="NewDev"){
+  	document.getElementById(tabName).style.display = "block";
+    document.getElementById("Suggestion").style.display = "none";
+    document.getElementById("ShowAllUnassigned").style.display = "none";
   }
   evt.currentTarget.className += " active";
 }

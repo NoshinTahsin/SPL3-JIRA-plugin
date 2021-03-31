@@ -9,12 +9,10 @@ change font style - css, aui css, inline css
 
 mongodb connect korte hbe
 
-shb unassigned show korte hbe
+shb unassigned show korte hbe - arekta new tab e - form ja ase thakuk
 
-cv upload dte hbe - etao pore
-
+cv upload dte hbe - etao pore - text format done Alhamdulillah
 naki preference form / - ekhn eta language, skills, 
-
 github link thke repo name + commits - ekhan thkei to used language thke skills ber kora jabe - eta pore dekhbo
 pdm k to ar cv dey na, dey HR k
 

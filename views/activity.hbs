@@ -2,8 +2,9 @@
 
 <!-- Tab links -->
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Suggestion')">Suggestion</button>
-  <button class="tablinks" onclick="openCity(event, 'NewDev')">Resume Upload</button>
+  <button class="tablinks" onclick="openTab(event, 'Suggestion')">Search Suggestion</button>
+  <button class="tablinks" onclick="openTab(event, 'ShowAllUnassigned')">All Unassigned Issues</button>
+  <button class="tablinks" onclick="openTab(event, 'NewDev')">Resume Upload</button>
 </div>
 
 <!-- Tab content -->
@@ -120,6 +121,10 @@
 </tbody>
 </table>
 </div>
+</div>
+
+<div id="ShowAllUnassigned" class="tabcontent">
+  <p>Show all unassigned issues here</p>
 </div>
 
 <div id="NewDev" class="tabcontent">
