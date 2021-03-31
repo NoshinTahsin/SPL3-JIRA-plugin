@@ -133,7 +133,11 @@
   <div>
     <form action="http://127.0.0.1:5000/getfile" method="POST" enctype="multipart/form-data"
     id="myForm" style="display:block">
-          Project file path: <input type="file" name="myfile" id="fileInput"><br>
+          <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" name="username" id="usr">
+          </div>
+          Upload Resume File (Must Be In Text Format) <input type="file" name="myfile" id="fileInput"><br>
           <input type="submit" value="Submit" onclick="formSubmitted()">
     </form>
 

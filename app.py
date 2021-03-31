@@ -426,6 +426,9 @@ def getfile():
 
         # for secure filenames. Read the documentation.
         file = request.files['myfile']
+        username = request.form.get("username")
+        print("@@@@@@@@@@@@@@@@@@@@@@@")
+        print(username)
         #filename = secure_filename(file.filename) 
 
         #path = "C:/Users/ASUS/Desktop/SPL3/Resume/"
