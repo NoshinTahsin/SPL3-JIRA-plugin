@@ -227,3 +227,30 @@ function uploaded() {
   });
 
 }
+
+function formSubmitted(){
+  document.getElementById("myAlert").style.display = "block";
+  document.getElementById("myForm").style.display = "none";
+}
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  if(cityName=="Suggestion"){
+  	document.getElementById(cityName).style.display = "block";
+    document.getElementById("NewDev").style.display = "none";
+  }
+  
+  if(cityName=="NewDev"){
+  	document.getElementById(cityName).style.display = "block";
+    document.getElementById("Suggestion").style.display = "none";
+  }
+  evt.currentTarget.className += " active";
+}

@@ -1,8 +1,14 @@
 {{!< layout }}
 
-<div style="display :flex;">
-   
-<div style="position: relative; top: 16px; left: 16px; flex:80%">
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Suggestion')">Suggestion</button>
+  <button class="tablinks" onclick="openCity(event, 'NewDev')">Resume Upload</button>
+</div>
+
+<!-- Tab content -->
+<div id="Suggestion" class="tabcontent" style="display:block">
+  <div style="position: relative; top: 16px; left: 16px; flex:80%">
   
 <h3>Enter the new issue key (Ex: RP-1)</h3>
 <!--method="post" action="/ask"-->
@@ -114,62 +120,28 @@
 </tbody>
 </table>
 </div>
+</div>
 
-  <!--<h3>Upload Resume For New Developers</h3>-->
-  <div style="position: absolute; top: 16px; right: 16px; font-size: 14px; flex:20%">
-    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Upload Resume For New Developers</button>
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Upload Resume</h4>
-        </div>
-        <div class="modal-body">
-         
-          <form action="http://127.0.0.1:5000/getfile" method="POST" enctype="multipart/form-data">
+<div id="NewDev" class="tabcontent">
+  <!--<h3>Upload Resume For New Developers</h3>
+  <div style="position: absolute; top: 16px; right: 16px; font-size: 14px; flex:20%">-->
+  <div id="myForm" style="display:block">
+    <form action="http://127.0.0.1:5000/getfile" method="POST" enctype="multipart/form-data">
           Project file path: <input type="file" name="myfile"><br>
-          <input type="submit" value="Submit">
-          </form>
-          
-          <!--<form class="aui">
-          <label for="skills">Enter Skills: </label>
-          <input 
-          class="text long-field" 
-          type="text" 
-          id="skills" 
-          name="skills" 
-          placeholder="python,javascript,django, etc.">
+          <input type="submit" value="Submit" onclick="formSubmitted()">
+    </form>
 
-          <label for="experience">Enter Project Descriptions: </label>
-          <input 
-          class="text long-field" 
-          type="text" 
-          id="experience" 
-          name="experience" 
-          placeholder="Data analysis, Computer Vision, etc.">
-      
-          <button 
-          class="aui-button aui-button-primary"
-          type="submit" 
-          form="skills" value="Submit" onclick="uploaded()">Submit</button>
-      
-        </form>-->
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
   </div>
 
+  <div class="alert alert-success" id="myAlert" style="display:none">
+    <strong>Success!</strong> Indicates a successful or positive action.
+  </div>
 
+</div>
+
+
+<div style="display :flex;">
+   
 </div>
 
 

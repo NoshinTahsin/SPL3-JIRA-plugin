@@ -171,3 +171,51 @@ def upload_file(message=""):
         message = 'file uploaded successfully'
         #return message
         return ('', 204)
+  
+  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Upload Resume For New Developers</button>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Upload Resume</h4>
+        </div>
+        <div class="modal-body">
+         
+          
+          
+          <!--<form class="aui">
+          <label for="skills">Enter Skills: </label>
+          <input 
+          class="text long-field" 
+          type="text" 
+          id="skills" 
+          name="skills" 
+          placeholder="python,javascript,django, etc.">
+
+          <label for="experience">Enter Project Descriptions: </label>
+          <input 
+          class="text long-field" 
+          type="text" 
+          id="experience" 
+          name="experience" 
+          placeholder="Data analysis, Computer Vision, etc.">
+      
+          <button 
+          class="aui-button aui-button-primary"
+          type="submit" 
+          form="skills" value="Submit" onclick="uploaded()">Submit</button>
+      
+        </form>-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
