@@ -1,0 +1,173 @@
+ //var suggestionUrl  = "http://127.0.0.1:5000/hello/";
+    //var suggestionUrl = "https://thingproxy.freeboard.io/fetch/https://my-subdomain.herokuapp.com/suggested/"
+    //suggestionUrl=suggestionUrl+"?keyname=";
+    //suggestionUrl=suggestionUrl+keyname;
+
+     /*fetch(suggestionUrl)
+    .then(function (response) {
+      alert(response.json());
+      return response.json(); // But parse it as JSON this time
+    })
+    .then(function (json) {
+        console.log('GET response as JSON:');
+        console.log(json); // Here’s our JSON object
+        alert(response.json());
+    })*/
+
+      /* var showIssue = document.getElementById("issue");
+            showIssue.innerHTML = "key: "+data["key"]+
+                                    "<br> priority: "+data["fields"]["priority"]["name"]+
+                                    "<br> status: "+ data["fields"]["status"]["name"]+
+                                    "<br> description: "+des["content"][0]["text"]+
+                                    "<br> summary: "+data["fields"]["summary"]+
+                                    "<br> issue creator: "+ data["fields"]["creator"]["displayName"];
+            showIssue.innerHTML = "<img src='" + value.avatarUrls["16x16"] + "' width='16'>";
+            showIssue.innerHTML = "<code>" + value.key + "</code>";
+            showIssue.innerHTML = "<a href='/browse/" + value.key + "'>" + value.name + "</a>";*/
+
+/*var row1 = document.getElementById("r1");
+        var row2 = document.getElementById("r2");
+        var row3 = document.getElementById("r3");
+        var row4 = document.getElementById("r4");
+        var row5 = document.getElementById("r5");
+       
+        row1.innerHTML = a_list[0][0];
+        row2.innerHTML = a_list[0][1];
+        row3.innerHTML = a_list[0][2];
+        row4.innerHTML = a_list[0][3];
+        row5.innerHTML = a_list[0][4];*/
+
+        /*var IssueTable = document.getElementById("issueTable");
+        var newRow = IssueTable.insertRow(-1);
+        var newCellType = newRow.insertCell(0)
+        var newCellSummary = newRow.insertCell(1);
+        var newCellDescription = newRow.insertCell(2);
+        var newCellKey = newRow.insertCell(3);
+        var newCellPriority = newRow.insertCell(4);
+        var newCellCreator = newRow.insertCell(5);
+    
+        newCellType.innerHTML = responseText;
+        newCellSummary.innerHTML =  responseText ;
+        newCellDescription.innerHTML = responseText;
+        newCellKey.innerHTML = responseText;
+        newCellPriority.innerHTML = responseText;
+        newCellCreator.innerHTML = responseText;
+    
+        IssueTable.deleteRow(1);*/
+    
+        //var AssigneeTable = document.getElementById("assigneeTable");
+
+          $(document).ready(function() {
+    $("#assigneeTable tr.something").click(function() {
+        alert("Clickeddddd");
+    });
+  });
+
+
+  
+<!--<div id="issue"></div>
+
+<p>Suggested Assignee:</p>
+<p>a b c d e</p>
+
+<h1>{{title}}</h1>
+
+<table id="projects">
+<thead>
+	<tr>
+	<th>Logo</th>
+	<th>Key</th>
+	<th>Name</th>
+	</tr>
+</thead>
+<tbody>
+	<tr></tr>
+</tbody>
+</table>
+
+<button class="aui-button aui-button-primary">Test Button!</button>
+
+<button class="aui-button aui-dropdown2-trigger" aria-controls="sections-with-headings">
+    Sections with headings
+</button>
+
+<aui-dropdown-menu id="sections-with-headings">
+    <aui-section label="Favourites">
+        <aui-item-link href="https://amazon.com">Amazon</aui-item-link>
+        <aui-item-link href="https://apple.com">Apple</aui-item-link>
+        <aui-item-link href="https://facebook.com">Facebook</aui-item-link>
+        <aui-item-link href="https://google.com">Google</aui-item-link>
+    </aui-section>
+    <aui-section label="Recently visited">
+        <aui-item-link href="http://atlassian.com">Atlassian</aui-item-link>
+    </aui-section>
+</aui-dropdown-menu>
+
+<aui-spinner></aui-spinner>
+
+<span class="aui-icon aui-icon-SIZE aui-iconfont-TYPE">Alternative Text</span>
+
+
+<div class="aui-page-panel main-panel">
+  <div class="aui-page-panel-inner">
+    <section class="aui-page-panel-item">
+      <div class="aui-group">
+        <div class="aui-item">
+          <p>
+            Congratulations!
+            You've successfully created an Atlassian Connect app using the
+            <a href="https://bitbucket.org/atlassian/atlassian-connect-express" target="_parent">atlassian-connect-express</a>
+            client library.
+          </p>
+          <p>
+            <a class="aui-button aui-button-primary" href="https://bitbucket.org/atlassian/atlassian-connect-express" target="_parent">
+              Get Started
+              <span class="aui-icon aui-icon-small aui-iconfont-devtools-arrow-right">Arrow right</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>-->
+
+
+<!--<form action="/team_name_url/" method="post">
+    <label for="team_name">Enter name: </label>
+    <input id="team_name" type="text" name="name_field" value="Default name for team.">
+    <input type="submit" value="OK">
+</form>
+
+<form  method = "POST" enctype = "multipart/form-data">
+         
+         <input type = "file" id="file" name = "File" />
+         <input type = "submit" value = "Submit" onclick="fileUpload()" />
+</form>-->
+
+
+ <form class="aui" action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <label for="filename">Upload Resume (Text File)</label>
+         <input type = "file" name = "file />
+         <input type = "submit" class="btn btn-info" />
+        </form> 
+
+        <div class="alert alert-success" id="myAlert">
+          <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
+
+
+message = None
+@app.route('/uploader', methods = ['GET', 'POST'])
+def upload_file(message=""):
+    if request.method == 'POST':
+        f = request.files['file']
+        #f.save(secure_filename(f.filename))
+        file = open(f, 'rt')
+        text = file.read()
+        file.close()
+        print("Fileeeeeeeeeeeeeeeeeeeee")
+        print(text)
+        message = 'file uploaded successfully'
+        #return message
+        return ('', 204)

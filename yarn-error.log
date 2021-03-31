@@ -1,0 +1,55 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @atlaskit/avatar
+
+PATH: 
+  C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\nodejs\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\PyCharm 2020.3.4\bin;;C:\Users\ASUS\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\ASUS\Desktop\SPL3\SPL3-JIRA-plugin\node_modules\ngrok\bin\ngrok.exe'
+
+npm manifest: 
+  {
+    "name": "my-app",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+      "start": "node -r esm app.js",
+      "lint": "eslint app.js routes"
+    },
+    "dependencies": {
+      "atlassian-connect-express": "^4.0.1",
+      "body-parser": "^1.19.0",
+      "compression": "^1.7.4",
+      "cookie-parser": "^1.4.4",
+      "errorhandler": "^1.5.1",
+      "esm": "^3.2.22",
+      "express": "^4.17.1",
+      "express-hbs": "^2.3.0",
+      "express-validator": "^6.4.1",
+      "helmet": "^3.21.2",
+      "morgan": "^1.9.1",
+      "python-shell": "^2.0.1",
+      "sequelize": "^5.21.2"
+    },
+    "devDependencies": {
+      "eslint": "^5.16.0",
+      "longjohn": "^0.2.12",
+      "ngrok": "^3.2.7",
+      "sqlite3": "5.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

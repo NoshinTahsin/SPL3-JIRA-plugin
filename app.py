@@ -41,6 +41,14 @@ def remove_punctuation(text):
     return no_punc.lower()
 
 def tokenize(text):
+
+    pattern = r'[0-9]'
+    # Match all digits in the string and replace them by empty string
+    text = re.sub(pattern, '', text)
+    #print(text)
+    text = text.replace("'", "")
+    text = text.replace('"', "")
+
     stop_words = set(stopwords.words('english'))
     word_tokens = word_tokenize(text)
     porter_stemmer= PorterStemmer()
@@ -390,6 +398,26 @@ def change(rt=""):
     
     return rt
 
+text = None
+@app.route('/uploaded/', methods = ['GET', 'POST'])
+def uploaded(text=""):
+    #if request.method == 'POST':
+    skills=request.args.get('skills')
+    print("&&&&&&&&&&&&skills: ",skills)
+
+    experience=request.args.get('experience')
+    print("&&&&&&&&&&&&experience: ",experience)
+
+    resumeInfo = skills + experience
+    resumeInfo=remove_punctuation(resumeInfo)
+    bad_chars=['!','@', '#', '$','%', '^', '&','*','(',')','-','+']
+    resumeInfo = ''.join(i for i in resumeInfo if not i in bad_chars)
+    tokenized_resumeInfo=tokenize(resumeInfo)
+    print("*****************************88")
+    print(tokenized_resumeInfo)
+    
+    return "Uploaded info"
+       
 
 if __name__ == '__main__':
     app.run(debug=True)

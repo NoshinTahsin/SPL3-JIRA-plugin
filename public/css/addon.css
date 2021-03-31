@@ -1,5 +1,12 @@
 /* App styles */
 
+body{
+  font-family:"Lucida Console", "Courier New", monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .intro-header h1 {
   font-size: 48px;
   line-height: 60px;
@@ -21,3 +28,8 @@
   color: white;
 }
 
+#top-right{
+  
+    
+  
+}

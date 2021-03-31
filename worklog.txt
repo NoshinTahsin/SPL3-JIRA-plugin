@@ -1,0 +1,21 @@
+empty issue show kore na - solved - description chilo na
+need to show image 
+row clickable - done
+double list show kortesilo, oitao kortese na - Alhamdulillah 
+click kore change korte hbe - done
+click kore oi specific id boshaite hbe - done Alhamdulillah
+hover color added - done
+change font style - css, aui css, inline css
+
+mongodb connect korte hbe
+
+shb unassigned show korte hbe
+
+cv upload dte hbe - etao pore
+
+naki preference form / - ekhn eta language, skills, 
+
+github link thke repo name + commits - ekhan thkei to used language thke skills ber kora jabe - eta pore dekhbo
+pdm k to ar cv dey na, dey HR k
+
+date integrate kora hoynai, jupyter e hoise

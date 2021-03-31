@@ -62,7 +62,7 @@ function formChanged(){
       a_list = JSON.parse(responseText);
       alert(a_list);
 
-      tempImage = "<img src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' width='24'>";
+      tempImage = "<img src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' width='20'>";
 
       var AssigneeTable = document.getElementById("assigneeTable");
       
@@ -172,11 +172,18 @@ function rowClicked(id){
   AP.request(changeAssigneeUrl, {
     success: function(responseText){
     alert("Change hoise to");
-    var rt = JSON.parse(responseText);
-    alert(rt);
+    //var rt = JSON.parse(responseText);
+    alert(responseText);
     }
   });
 
+}
+
+function fileUpload(){
+  //file = document.getElementById("file").innerHTML;
+  //var upload  = "http://127.0.0.1:5000/upload/?file=";
+  //upload = upload + file;
+  alert("Successfully Uploaded");
 }
 
 function buttonClicked() {
@@ -192,6 +199,30 @@ function buttonClicked() {
     success: function(responseText){
     var rt = JSON.parse(responseText);
     alert(rt);
+    }
+  });
+
+}
+
+function uploaded() {
+  skills = document.getElementsByName("skills")[0].value;
+  alert(skills);
+  experience = document.getElementsByName("experience")[0].value;
+  alert(experience);
+  
+  var uploadUrl  = "http://127.0.0.1:5000/uploaded/";
+  uploadUrl=uploadUrl+"?skills=";
+  uploadUrl=uploadUrl+skills;
+  uploadUrl = uploadUrl + "&experience=";
+  uploadUrl = uploadUrl + experience;
+  
+  alert(uploadUrl); 
+  //document.getElementById("r1").innerHTML = "Assignee Changed!";
+ 
+  AP.request(uploadUrl, {
+    success: function(responseText){
+    alert("Change hoise to");
+    alert(responseText);
     }
   });
 
