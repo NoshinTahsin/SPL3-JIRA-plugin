@@ -125,16 +125,17 @@
 <div id="NewDev" class="tabcontent">
   <!--<h3>Upload Resume For New Developers</h3>
   <div style="position: absolute; top: 16px; right: 16px; font-size: 14px; flex:20%">-->
-  <div id="myForm" style="display:block">
-    <form action="http://127.0.0.1:5000/getfile" method="POST" enctype="multipart/form-data">
-          Project file path: <input type="file" name="myfile"><br>
+  <div>
+    <form action="http://127.0.0.1:5000/getfile" method="POST" enctype="multipart/form-data"
+    id="myForm" style="display:block">
+          Project file path: <input type="file" name="myfile" id="fileInput"><br>
           <input type="submit" value="Submit" onclick="formSubmitted()">
     </form>
 
   </div>
 
   <div class="alert alert-success" id="myAlert" style="display:none">
-    <strong>Success!</strong> Indicates a successful or positive action.
+    <strong>Resume Upload Successful!</strong> 
   </div>
 
 </div>

@@ -231,6 +231,12 @@ function uploaded() {
 function formSubmitted(){
   document.getElementById("myAlert").style.display = "block";
   document.getElementById("myForm").style.display = "none";
+
+  setTimeout(function(){ 
+    document.getElementById("myAlert").style.display = "none";
+    document.getElementById("myForm").style.display = "block";
+    document.getElementById("myForm").reset();
+  }, 1000);
 }
 
 function openCity(evt, cityName) {
