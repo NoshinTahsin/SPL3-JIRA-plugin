@@ -1,6 +1,8 @@
 from flask import jsonify,Flask,render_template,request
+#from werkzeug import secure_filename
 from flask_cors import CORS
 # from flask_restful import Resource, Api;
+import os
 import json
 import nltk
 import math
@@ -417,7 +419,35 @@ def uploaded(text=""):
     print(tokenized_resumeInfo)
     
     return "Uploaded info"
-       
+    
+@app.route('/getfile', methods=['GET','POST'])
+def getfile():
+    if request.method == 'POST':
+
+        # for secure filenames. Read the documentation.
+        file = request.files['myfile']
+        #filename = secure_filename(file.filename) 
+
+        #path = "C:/Users/ASUS/Desktop/SPL3/Resume/"
+        # os.path.join is used so that paths work in every operating system
+        #file.save(os.path.join(path ,filename))
+
+        # You should use os.path.join here too.
+        #with open(os.path.join(path, filename)) as f:
+        resumeInfo = file.read()
+        resumeInfo = resumeInfo.decode()
+        resumeInfo=remove_punctuation(resumeInfo)
+        bad_chars=['!','@', '#', '$','%', '^', '&','*','(',')','-','+']
+        resumeInfo = ''.join(i for i in resumeInfo if not i in bad_chars)
+        tokenized_resumeInfo=tokenize(resumeInfo)
+        print("*****************************88")
+        print(tokenized_resumeInfo)
+
+        return ('', 204)     
+
+    else:
+        result = request.args.get['myfile']
+    return result
 
 if __name__ == '__main__':
     app.run(debug=True)
