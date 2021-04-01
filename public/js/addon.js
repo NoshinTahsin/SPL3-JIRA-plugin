@@ -5,13 +5,15 @@ var keyname="";
 
 function formChanged(){
   
+  document.getElementById("targetIssue").style.display = "block";
+
   keyname = document.getElementsByName("keyname")[0].value;
-  alert(keyname);
+  //alert(keyname);
   var suggestionUrl  = "http://127.0.0.1:5000/suggested/";
   suggestionUrl=suggestionUrl+"?keyname=";
   suggestionUrl=suggestionUrl+keyname;
   
-  alert(suggestionUrl); 
+  //alert(suggestionUrl); 
 
   var tempImage ="";
   //a=["lucille.hogan","isabel.richardson","marsha.cook","joshua.maples","jerome.johnson"];
@@ -60,7 +62,10 @@ function formChanged(){
   AP.request(suggestionUrl, {
       success: function(responseText){
       a_list = JSON.parse(responseText);
-      alert(a_list);
+      //alert(a_list);
+      
+      document.getElementById("ShowSuggestionList").style.display = "block";
+
 
       tempImage = "<img src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' width='20'>";
 
@@ -124,39 +129,39 @@ function rowClicked(id){
     //valueToSet = document.getElementById("name_r1").innerHTML;
     nameToSet = a_list[0][0];
     idToAssign = a_list[0][5];
-    alert(nameToSet);
+    //alert(nameToSet);
   }
 
   else if (String(id)=="r2"){
-    alert("dhukse");
+    //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
     nameToSet = a_list[0][1];
     idToAssign = a_list[0][6];
-    alert(nameToSet);
+    //alert(nameToSet);
   }
 
   else if (String(id)=="r3"){
-    alert("dhukse");
+    //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
     nameToSet = a_list[0][2];
     idToAssign = a_list[0][7];
-    alert(nameToSet);
+    //alert(nameToSet);
   }
 
   else if (String(id)=="r4"){
-    alert("dhukse");
+    //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
     nameToSet = a_list[0][3];
     idToAssign = a_list[0][8];
-    alert(nameToSet);
+    //alert(nameToSet);
   }
 
   else if (String(id)=="r5"){
-    alert("dhukse");
+    //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
     nameToSet = a_list[0][4];
     idToAssign = a_list[0][9];
-    alert(nameToSet);
+    //alert(nameToSet);
   }
 
   //var idToAssign = "5e299526bf04010e70c42927";
@@ -167,13 +172,13 @@ function rowClicked(id){
   changeAssigneeUrl = changeAssigneeUrl + "&idToAssign=";
   changeAssigneeUrl = changeAssigneeUrl + idToAssign;
 
-  alert(changeAssigneeUrl);
+  //alert(changeAssigneeUrl);
 
   AP.request(changeAssigneeUrl, {
     success: function(responseText){
-    alert("Change hoise to");
+    //alert("Change hoise to");
     //var rt = JSON.parse(responseText);
-    alert(responseText);
+    //alert(responseText);
     }
   });
 
@@ -183,13 +188,13 @@ function fileUpload(){
   //file = document.getElementById("file").innerHTML;
   //var upload  = "http://127.0.0.1:5000/upload/?file=";
   //upload = upload + file;
-  alert("Successfully Uploaded");
+  //alert("Successfully Uploaded");
 }
 
 function buttonClicked() {
   valueToSet = document.getElementById("r1").innerHTML;
   //alert(valueToSet);
-  alert("Assignee Changed")
+  //alert("Assignee Changed")
 
   //document.getElementById("r1").innerHTML = "Assignee Changed!";
   var changeAssigneeUrl  = "http://127.0.0.1:5000/change/";
@@ -251,20 +256,20 @@ function openTab(evt, tabName) {
 
   if(tabName=="Suggestion"){
   	document.getElementById(tabName).style.display = "block";
-    document.getElementById("ShowAllUnassigned").style.display = "none";
+    //document.getElementById("ShowAllUnassigned").style.display = "none";
     document.getElementById("NewDev").style.display = "none";
   }
 
-  if(tabName=="ShowAllUnassigned"){
+  /*if(tabName=="ShowAllUnassigned"){
   	document.getElementById(tabName).style.display = "block";
     document.getElementById("Suggestion").style.display = "none";
     document.getElementById("NewDev").style.display = "none";
-  }
+  }*/
 
   if(tabName=="NewDev"){
   	document.getElementById(tabName).style.display = "block";
     document.getElementById("Suggestion").style.display = "none";
-    document.getElementById("ShowAllUnassigned").style.display = "none";
+    //document.getElementById("ShowAllUnassigned").style.display = "none";
   }
   //evt.currentTarget.className += " active";
   evt.currentTarget.className += " w3-blue";

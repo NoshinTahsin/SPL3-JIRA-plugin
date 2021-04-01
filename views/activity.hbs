@@ -3,7 +3,7 @@
 <!-- Tab links -->
 <div class="tab">
   <button class="tablinks w3-blue" onclick="openTab(event, 'Suggestion')">Search Suggestion</button>
-  <button class="tablinks" onclick="openTab(event, 'ShowAllUnassigned')">All Unassigned Issues</button>
+  <!--<button class="tablinks" onclick="openTab(event, 'ShowAllUnassigned')">All Unassigned Issues</button>-->
   <button class="tablinks" onclick="openTab(event, 'NewDev')">Resume Upload</button>
 </div>
 
@@ -14,7 +14,7 @@
 <h3>Enter the new issue key (Ex: RP-1)</h3>
 <!--method="post" action="/ask"-->
 <form class="aui">
-    <label for="keyname">Search issues: </label>
+    <label for="keyname"> </label>
     <input 
       class="text long-field" 
       type="text" 
@@ -25,7 +25,8 @@
     <!--<input type="submit" value="Search">
     <button type="submit" form="nameform" value="Submit">Submit</button>-->
     <button 
-      class="aui-button aui-button-primary"
+      id="buttonReset"
+      class="btn btn-primary"
       type="submit" 
       form="keyname" value="Search" onclick="formChanged()">Search</button>
     
@@ -36,11 +37,12 @@
     <input type="submit">
 </form>-->
 
-<h3>Target Issue</h3>
+<div id="targetIssue" style="display:none">
+<h3 style="text-align: center;"><b>Target Issue</b></h3>
 
 <table id="issueTable">
 <thead>
-	<tr>
+	<tr id="row01">
 	<th>Issue Type</th>
 	<th>Summary</th>
   <th>Description</th>
@@ -50,11 +52,13 @@
 	</tr>
 </thead>
 <tbody>
-	<tr></tr>
+	<tr id="row0"></tr>
 </tbody>
 </table>
+</div>
 
-<p>Suggested Assignee List</p>
+<div id="ShowSuggestionList" style="display:none">
+<h3 style="text-align: center;"><b>Suggested Assignee List</b></h3>
 <span>{{result.objective_function}}</span>
 
 <!--<button class="aui-button aui-dropdown2-trigger" aria-controls="example-dropdown">
@@ -122,10 +126,12 @@
 </table>
 </div>
 </div>
-
-<div id="ShowAllUnassigned" class="tabcontent">
-  <p>Show all unassigned issues here</p>
 </div>
+
+
+<!--<div id="ShowAllUnassigned" class="tabcontent">
+  <p>Show all unassigned issues here</p>
+</div>-->
 
 <div id="NewDev" class="tabcontent">
   <!--<h3>Upload Resume For New Developers</h3>
@@ -137,8 +143,8 @@
             <label for="usr">Name:</label>
             <input type="text" class="form-control" name="username" id="usr">
           </div>
-          Upload Resume File (Must Be In Text Format) <input type="file" name="myfile" id="fileInput"><br>
-          <input type="submit" value="Submit" onclick="formSubmitted()">
+          Upload Resume (Must Be In Text Format) <input type="file" name="myfile" id="fileInput"><br>
+          <input id="buttonReset" class="btn btn-primary" type="submit" value="Submit" onclick="formSubmitted()">
     </form>
 
   </div>

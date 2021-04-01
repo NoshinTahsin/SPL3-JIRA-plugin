@@ -28,6 +28,10 @@ body{
   color: white;
 }
 
+#r1,#r2,#r3,#r4,#r5,#row0,#row01{
+  padding-top: 10px;
+}
+
 #top-right{
   
     
@@ -69,4 +73,17 @@ body{
   border: 1px solid #ccc;
   border-top: none;
   height: 1000px;
+}
+
+#targetIssue{
+  padding-top: 40px;
+}
+
+#ShowSuggestionList{
+  padding-top: 40px;
+}
+
+.button-color{
+  background-color: #1e75da;
+  color :aliceblue;
 }
