@@ -4,7 +4,11 @@ function constructCorpus(){
   var connectDBUrl  = "http://127.0.0.1:5000/constructCorpus";
   AP.request(connectDBUrl, {
     success: function(responseText){
-    alert("Construct Corpus");
+    //alert("Construct Corpus");
+    document.getElementById("DatabaseUpdatedAlert").style.display = "block";
+    setTimeout(function(){ 
+          document.getElementById("DatabaseUpdatedAlert").style.display = "none";
+    }, 2000);
     //alert(responseText);
     }
   });
