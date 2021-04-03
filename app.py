@@ -37,11 +37,11 @@ num_of_projects=len(projects)
 
 issueCount=0
 for i in range(0,num_of_projects):
-    print(projects[i])
+    #print(projects[i])
     issues_in_proj = jira.search_issues('project='+str(projects[i]))
-    print(len(issues_in_proj))
+    #print(len(issues_in_proj))
     issueCount+=len(issues_in_proj)
-print(issueCount)
+#print(issueCount)
 
 def remove_punctuation(text):
     no_punc = "".join([c for c in text if c not in string.punctuation])
@@ -112,12 +112,12 @@ def data_processing():
     num_of_projects=len(projects)
     issueCount=0
     for i in range(0,num_of_projects):
-        print(projects[i])
+        #print(projects[i])
         #jql
         issues_in_proj = jira.search_issues('project='+str(projects[i]))
-        print(len(issues_in_proj))
+        #print(len(issues_in_proj))
         issueCount+=len(issues_in_proj)
-    print(issueCount)
+    #print(issueCount)
     
     cnt=0
     for p in projects:
@@ -186,22 +186,22 @@ def data_processing():
                                         
                 terms_assignee_list=[]
 
-    print("Final map:")
-    print(assignee_terms_map)
+    #print("Final map:")
+    #print(assignee_terms_map)
     
-    print("Final terms assignee map:")
-    print(terms_assignee_map)
+    #print("Final terms assignee map:")
+    #print(terms_assignee_map)
 
-    print("Account ID map:")
-    print(account_id_map)
+    #print("Account ID map:")
+    #print(account_id_map)
 
-    print(len(assignee_terms_map))
+    #print(len(assignee_terms_map))
     global available_devlist
     available_devlist=[]
 
     for key,val in assignee_terms_map.items():
         available_devlist.append(key)
-    print(available_devlist) 
+    #print(available_devlist) 
     #del assignee_terms_map["None"]
     for key,val in  assignee_terms_map.items():
         print(key, "=>", val)
@@ -211,7 +211,7 @@ def data_processing():
     #now need to map term => dev
     #print(len(terms_assignee_map))
     add=0
-    print(terms_assignee_map)
+    #print(terms_assignee_map)
     
     for key in account_id_map:
         temp_dict={}
@@ -219,8 +219,8 @@ def data_processing():
         temp_dict['assignee_id'] = account_id_map[key]
         db_assignee_list.append(temp_dict)
 
-    print("db_assignee_list: ")
-    print(db_assignee_list)
+    #print("db_assignee_list: ")
+    #print(db_assignee_list)
     
     #mongo - collection - assignee
     #{'name': 'Moumita Asad', 'assignee_id': '5f5764e4bea5be0068101b9a'}
@@ -236,14 +236,14 @@ def data_processing():
                 print("Entry exists")
                 
             else:
-                print("Entry doesn't exist")
+                #print("Entry doesn't exist")
                 mydict = {}
                 mydict["name"] = myquery["name"]
                 mydict["assignee_id"] = db_assignee_list[i]["assignee_id"]
                 x = mycol.insert_one(mydict)
 
     else:
-        print("No document yet in this collection.")
+        #print("No document yet in this collection.")
         #mydict = {}
         #mydict["name"] = db_assignee_list[i]["name"]
         #mydict["assignee_id"] = db_assignee_list[i]["assignee_id"]
@@ -252,8 +252,8 @@ def data_processing():
     #check if query exists, if not then create one 
 
     #print "Assignee" after the update:
-    for x in mycol.find():
-        print(x)
+    #for x in mycol.find():
+        #print(x)
         
     #assignee_terms_map - dictionary
     #{'Moumita Asad': ['write', 'icse', 'paper'], 'Noshin Tahsin': ['regression','atlassian']}
@@ -265,8 +265,8 @@ def data_processing():
         temp_dict['terms'] = assignee_terms_map[key]
         db_assignee_terms_list.append(temp_dict)
 
-    print("db_assignee_terms_list: ")
-    print(db_assignee_terms_list)
+    #print("db_assignee_terms_list: ")
+    #print(db_assignee_terms_list)
 
     #mongo - collection - AssigneeTermsMap
     #{'name': 'Moumita Asad', 'terms': '['write', 'icse', 'paper']}
@@ -280,28 +280,28 @@ def data_processing():
 
             mydoc = mycol.find(myquery)
             if(mydoc.count()>0):
-                print("Entry exists")
+                #print("Entry exists")
                 #update expertise/terms list
                 setMap["terms"] = db_assignee_terms_list[i]["terms"]
                 newvalues = { "$set": setMap }
                 mycol.update_one(myquery, newvalues)
 
             else:
-                print("Entry doesn't exist")
+                #print("Entry doesn't exist")
                 mydict = {}
                 mydict["name"] = myquery["name"]
                 mydict["terms"] = db_assignee_terms_list[i]["terms"]
                 x = mycol.insert_one(mydict)
 
     else:
-            print("No document yet in this collection.")
+            #print("No document yet in this collection.")
             x = mycol.insert_many(db_assignee_terms_list)
 
         #check if query exists, if not then create one 
 
     #print "AssigneeTermsMap" after the update:
-    for x in mycol.find():
-        print(x)
+    #for x in mycol.find():
+        #print(x)
         
     #terms_assignee_map - dictionary - key:list[map,map]
     #{'paper': [{'assignee': 'Moumita Asad', 'date': '2020-09-08T03:58:33.865-0700'}, {'assignee': 'Noshin Tahsin', 
@@ -320,12 +320,12 @@ def data_processing():
         now = datetime.now()
         currentTime = now.strftime("%Y-%m-%d %H:%M:%S")
 
-        print(currentTime)
+        #print(currentTime)
         temp_dict['last_updated'] = currentTime
         db_terms_assignee_list.append(temp_dict)
 
-    print("db_terms_assignee_list: ")
-    print(db_terms_assignee_list)
+    #print("db_terms_assignee_list: ")
+    #print(db_terms_assignee_list)
 
     #mongo - collection - TermsAssigneeMap
     #{'term': 'paper', 'developer_expertise': [{'assignee': 'Moumita Asad', 'date': '2020-09-08T03:58:33.865-0700'}, 
@@ -341,7 +341,7 @@ def data_processing():
 
             mydoc = mycol.find(myquery)
             if(mydoc.count()>0):
-                print("Entry exists")
+                #print("Entry exists")
                 #update developer expertise list
                 setMap["developer_expertise"] = db_terms_assignee_list[i]["developer_expertise"]
                 setMap["last_updated"] = db_terms_assignee_list[i]["last_updated"]
@@ -349,7 +349,7 @@ def data_processing():
                 mycol.update_one(myquery, newvalues)
 
             else:
-                print("Entry doesn't exist")
+                #print("Entry doesn't exist")
                 mydict = {}
                 mydict["term"] = myquery["term"]
                 mydict["developer_expertise"] = db_terms_assignee_list[i]["developer_expertise"]
@@ -357,14 +357,14 @@ def data_processing():
                 x = mycol.insert_one(mydict)
 
     else:
-            print("No document yet in this collection.")
+            #print("No document yet in this collection.")
             x = mycol.insert_many(db_terms_assignee_list)
 
         #check if query exists, if not then create one 
 
     #print "TermsAssigneeMap" after the update:
-    for x in mycol.find():
-        print(x)
+    #for x in mycol.find():
+        #print(x)
 
 
 def process_new_issue(key):
@@ -377,7 +377,7 @@ def process_new_issue(key):
     global newterm_dev_date 
     newterm_dev_list =[]
     newterm_dev_date = []
-    print("%%%%%%%%%%%%%%%%%%%%%%%%%%"+str(key))
+    #print("%%%%%%%%%%%%%%%%%%%%%%%%%%"+str(key))
 
     new_issue=jira.issue(key)
     new_issue_creation_date = str(new_issue.fields.created)
@@ -400,7 +400,7 @@ def process_new_issue(key):
     tokenized_new_summary=tokenize(new_summary)
 
     new_terms=tokenized_new_des+tokenized_new_summary
-    print(new_terms)
+    #print(new_terms)
 
     #fetch terms_assignee_map from database
     mycol = mydb["TermsAssigneeMap"]
@@ -413,15 +413,15 @@ def process_new_issue(key):
             #tempMap["last_updated"] = x["last_updated"]
             #db_terms_assignee_list.append(tempMap)
 
-    print(fetched_terms_assignee_map)
+    #print(fetched_terms_assignee_map)
     
     #now i have the new issue terms
     cnt=0
     for newterm in new_terms:
         if newterm in fetched_terms_assignee_map:
             cnt=cnt+1
-            print(newterm)
-            print(fetched_terms_assignee_map[newterm])
+            #print(newterm)
+            #print(fetched_terms_assignee_map[newterm])
             newterm_dev_map[newterm]=fetched_terms_assignee_map[newterm]
             #returns a devlist for a single newterm
             #developers who has previously worked on that term
@@ -435,8 +435,10 @@ def process_new_issue(key):
         mydoc = mycol.find()
         for x in mydoc:
             #tempMap = {}
+            print(x["name"])
             fetched_available_devlist.append(x["name"])
 
+    print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
     print(fetched_available_devlist)
     
     for dev in fetched_available_devlist:
@@ -484,7 +486,7 @@ def process_new_issue(key):
 
         dev_termInfo[dev]=term_info
 
-        print(dev_termInfo)
+        #print(dev_termInfo)
 
         #for key,value in dev_termInfo.items():
             #print(key," => ",value)
@@ -500,7 +502,7 @@ def devFixFreq(term):
         for x in mydoc:
             fetched_assignee_terms_map[x["name"]] = x["terms"]
 
-    print(fetched_assignee_terms_map)
+    #print(fetched_assignee_terms_map)
     
     for dev in fetched_assignee_terms_map:
         terms_used=fetched_assignee_terms_map[dev]
@@ -549,8 +551,8 @@ def calculate_devscore():
         #end of for
         dev_score[key]=expertise
     #end of for
-    print("\nSCORE: ")
-    print(dev_score)
+    #print("\nSCORE: ")
+    #print(dev_score)
     sorted_dev_score = sorted(dev_score.items() , reverse=True, key=lambda x: x[1])
     
     return sorted_dev_score
@@ -569,7 +571,7 @@ def getList():
         for x in mydoc:
             fetched_account_id_map[x["name"]] = x["assignee_id"]
 
-    print(fetched_account_id_map)
+    #print(fetched_account_id_map)
     
     for i in range (0,len(sorted_dev_score)):
         tempMap = {}
@@ -580,22 +582,22 @@ def getList():
         
         a.append(sorted_dev_score[i][0])
         a_id.append(fetched_account_id_map[sorted_dev_score[i][0]])
-        print(sorted_dev_score[i][0])
-        print("Account ID")
-        print(fetched_account_id_map[sorted_dev_score[i][0]])
-        print("\n")
+        #print(sorted_dev_score[i][0])
+        #print("Account ID")
+        #print(fetched_account_id_map[sorted_dev_score[i][0]])
+        #print("\n")
 
-    print(a)
-    print(a_id)
+    #print(a)
+    #print(a_id)
     
     # Iterate over the sorted sequence
     scoreList = []
     for elem in sorted_dev_score :
-        print(elem[0] , " ::" , elem[1] )
+        #print(elem[0] , " ::" , elem[1] )
         scoreList.append(elem[1])
     
-    a=a+a_id+scoreList
-    print(a)
+    #a=a+a_id+scoreList
+    #print(a)
     print(resultList)
     
     return resultList
@@ -628,10 +630,10 @@ rt = None
 
 def change(rt=""):
     key=request.args.get('keyname')
-    print("&&&&&&&&&&&&KeyToChange: ",key)
+    #print("&&&&&&&&&&&&KeyToChange: ",key)
 
     toAssign=request.args.get('idToAssign')
-    print("&&&&&&&&&&&&toAssign: ",toAssign)
+    #print("&&&&&&&&&&&&toAssign: ",toAssign)
 
     url = "https://pg-req.atlassian.net/rest/api/3/issue/"
     url = url + key +"/assignee"
@@ -686,8 +688,8 @@ def change(rt=""):
 
     x = mycol.insert_one(suggestiondict)
     #print "Suggestions" after the update:
-    for x in mycol.find():
-        print(x)
+    #for x in mycol.find():
+        #print(x)
     
     return rt
     
@@ -724,22 +726,22 @@ def getfile():
             mydoc = mycol.find(myquery)
                 
             if(mydoc.count()>0):
-                print("Entry exists")
+                #print("Entry exists")
                 #update expertise/terms list
                 setMap["terms"] = ResumeEntry["terms"]
                 newvalues = { "$set": setMap }
                 mycol.update_one(myquery, newvalues)
 
             else:
-                print("Entry doesn't exist")
+                #print("Entry doesn't exist")
                 x = mycol.insert_one(ResumeEntry)
 
         else:
-            print("No document yet in this collection.")
+            #print("No document yet in this collection.")
             x = mycol.insert_one(ResumeEntry)
                        
-            for x in mycol.find():
-                print(x)
+            #for x in mycol.find():
+                #print(x)
                 
         #update mongo - collection - TermsAssigneeMap for resume data
         #term-developer expertise list : assignee, date map, last updated
@@ -758,14 +760,14 @@ def getfile():
             for x in mydoc:
                 fetched_terms_assignee_map[x["term"]] = x["developer_expertise"]
             
-            print(fetched_terms_assignee_map)
+            #print(fetched_terms_assignee_map)
 
 
         for term in ResumeEntry["terms"]:
             if mycol.count_documents({})>0:
                 if(term in fetched_terms_assignee_map):
                     setMap = {}
-                    print("Term exists")
+                    #print("Term exists")
                     #update expertise/terms list
                     fetchedDeveloperExpertise = []
                     
@@ -792,7 +794,7 @@ def getfile():
 
                 else:
                     setMap = {}
-                    print("Entry doesn't exist")
+                    #print("Entry doesn't exist")
                     setMap["term"] = term
                     
                     devExpertiseList = []
@@ -810,7 +812,7 @@ def getfile():
 
             else:
                 setMap = {}
-                print("No document yet in this collection.")
+                #print("No document yet in this collection.")
                 setMap["term"] = term
                 devExpertiseList = []
 
@@ -825,14 +827,15 @@ def getfile():
 
                 x = mycol.insert_one(setMap)
 
-            for x in mycol.find():
-                print(x)
+            #for x in mycol.find():
+                    #print(x)
 
-                return ('', 204)     
+        return ('', 204)     
 
-            else:
-                result = request.args.get['myfile']
-            return result
+    else:
+        result = request.args.get['myfile']
+    
+        return result
 
 @app.route('/constructCorpus', methods=['GET','POST'])
 def constructCorpus():

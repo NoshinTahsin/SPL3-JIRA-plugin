@@ -15,7 +15,7 @@ var keyname="";
 
 function formChanged(){
   
-  document.getElementById("targetIssue").style.display = "block";
+  //document.getElementById("targetIssue").style.display = "block";
 
   keyname = document.getElementsByName("keyname")[0].value;
   //alert(keyname);
@@ -40,10 +40,15 @@ function formChanged(){
 
   AP.request('/rest/api/3/issue/'+keyname, {
       success: function(responseText){
-        
+
+          document.getElementById("IssueNotExist").style.display = "none";
+          document.getElementById("heading").style.display = "block";
+          document.getElementById("targetIssue").style.display = "block";
           var data = JSON.parse(responseText);
+          
           des=data["fields"]["description"]["content"][0];
           var IssueTable = document.getElementById("issueTable");
+
           var newRow = IssueTable.insertRow(-1);
           var newCellType = newRow.insertCell(0)
           var newCellSummary = newRow.insertCell(1);
@@ -51,6 +56,13 @@ function formChanged(){
           var newCellKey = newRow.insertCell(3);
           var newCellPriority = newRow.insertCell(4);
           var newCellCreator = newRow.insertCell(5);
+
+         /* var newCellType = document.getElementById("c1");
+          var newCellSummary = document.getElementById("c2");
+          var newCellDescription = document.getElementById("c3");
+          var newCellKey = document.getElementById("c4");
+          var newCellPriority = document.getElementById("c1");
+          var newCellCreator = document.getElementById("c1");*/
   
           //story icon
           newCellType.innerHTML = "<img src='" + data["fields"]["issuetype"]["iconUrl"] + "' width='16'>";
@@ -64,7 +76,21 @@ function formChanged(){
 
           //tempImage = "<img src='" + data["fields"]["assignee"]["avatarUrls"]["24x24"]+"' width='24'>";
           //need to return the list here from flask
-      }
+      },
+      error: function(xhr, statusText, errorThrown){
+        document.getElementById("heading").style.display = "none";
+        document.getElementById("targetIssue").style.display = "none";
+        document.getElementById("ShowSuggestionList").style.display = "none";
+        //document.getElementById("issueTable").style.display = "none";
+        document.getElementById("IssueNotExist").style.display = "block";
+        setTimeout(function(){ 
+          document.getElementById("IssueNotExist").style.display = "none";
+          document.getElementById("SearchForm").reset();
+        }, 2000);
+        //alert("emn issue nai")
+        reject(arguments);
+       
+    }
   });
 
   //need to run flask
@@ -75,7 +101,6 @@ function formChanged(){
       alert(a_list);
       
       document.getElementById("ShowSuggestionList").style.display = "block";
-
 
       tempImage = "<img src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png' width='20'>";
 
@@ -186,6 +211,20 @@ function rowClicked(id){
 
   AP.request(changeAssigneeUrl, {
     success: function(responseText){
+      document.getElementById("targetIssue").style.display = "none";
+      document.getElementById("ShowSuggestionList").style.display = "none";
+      //document.getElementById("issueTable").style.display = "none";
+      document.getElementById("IssueNotExist").style.display = "none";
+      document.getElementById("AssigneeChangedAlert").style.display = "block";
+      setTimeout(function(){ 
+        document.getElementById("AssigneeChangedAlert").style.display = "none";
+        document.getElementById("SearchForm").reset();
+        document.getElementById("heading").style.display = "none";
+        document.getElementById("targetIssue").style.display = "none";
+        a_list = []
+      }, 2000);
+      
+
     //alert("Change hoise to");
     //var rt = JSON.parse(responseText);
     //alert(responseText);

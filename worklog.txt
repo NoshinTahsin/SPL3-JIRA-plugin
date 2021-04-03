@@ -12,12 +12,21 @@ cv upload dte hbe - etao pore - text format done Alhamdulillah
 naki preference form / - ekhn eta language, skills, 
 github link thke repo name + commits - ekhan thkei to used language thke skills ber kora jabe - eta pore dekhbo
 pdm k to ar cv dey na, dey HR k
+mongo + date integrate kora hoynai, jupyter e hoise - ekhn eta kori - 3 april - ajke raat e shesh korte hbe - done
 
-mongo + date integrate kora hoynai, jupyter e hoise - ekhn eta kori - 3 april - ajke raat e shesh korte hbe
-UI enhancement - 3 april - bikaler majhe
-Record kore vaider pathano, approval neya - kalke raat er majhe - 3 april, msg - dupure
-Report - 4 april
-Presentation - 4 april 
-exciting requirement - report generation - pdf or text - kalke shondhar majhe
+Allah!!!!!!!!!!!
 
-Validation - 4 april - shbar last e InshaAllah
+error handling - vul key - handled - alert dekhay - done
+name, vul file - Alhamdulillah khub e kom case
+issue description na dile bari khay, empty thakleo kaj korte hbe
+already assigned issue te assign korle ki hoy? - hoy, je assigned take shurute dekhay - done - Alhamdulillah
+
+UI enhancement - db-updatingggggggg-db-updated! - then frontend fix
+then demo record - Record kore vaider pathano, approval neya 
+report generation - exciting requirement - report generation - pdf or text 
+
+Final Report 
+Presentation 
+Validation 
+
+

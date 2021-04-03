@@ -13,7 +13,7 @@
   
 <h3>Enter the new issue key (Ex: RP-1)</h3>
 <!--method="post" action="/ask"-->
-<form class="aui">
+<form class="aui" id="SearchForm">
     <label for="keyname"> </label>
     <input 
       class="text long-field" 
@@ -37,8 +37,16 @@
     <input type="submit">
 </form>-->
 
+<div class="alert alert-danger" id="IssueNotExist" style="display:none">
+    <strong>No Such Issue Exists!</strong> 
+</div>
+
+<div class="alert alert-success" id="AssigneeChangedAlert" style="display:none">
+    <strong>Assignee Updated!</strong> 
+</div>
+
 <div id="targetIssue" style="display:none">
-<h3 style="text-align: center;"><b>Target Issue</b></h3>
+<h3 style="text-align: center;" id="heading"><b>Target Issue</b></h3>
 
 <table id="issueTable">
 <thead>
