@@ -1,5 +1,15 @@
 /* App frontend script */
 
+function constructCorpus(){
+  var connectDBUrl  = "http://127.0.0.1:5000/constructCorpus";
+  AP.request(connectDBUrl, {
+    success: function(responseText){
+    alert("Construct Corpus");
+    //alert(responseText);
+    }
+  });
+}
+
 var a_list=[];
 var keyname="";
 
@@ -62,7 +72,7 @@ function formChanged(){
   AP.request(suggestionUrl, {
       success: function(responseText){
       a_list = JSON.parse(responseText);
-      //alert(a_list);
+      alert(a_list);
       
       document.getElementById("ShowSuggestionList").style.display = "block";
 
@@ -103,11 +113,11 @@ function formChanged(){
          av4.innerHTML = tempImage;
          av5.innerHTML = tempImage;
          
-         nm1.innerHTML = a_list[0][0];
-         nm2.innerHTML = a_list[0][1];
-         nm3.innerHTML = a_list[0][2];
-         nm4.innerHTML = a_list[0][3];
-         nm5.innerHTML = a_list[0][4];
+         nm1.innerHTML = a_list[0]["name"];
+         nm2.innerHTML = a_list[1]["name"];
+         nm3.innerHTML = a_list[2]["name"];
+         nm4.innerHTML = a_list[3]["name"];
+         nm5.innerHTML = a_list[4]["name"];
 
 
       }
@@ -127,40 +137,40 @@ function rowClicked(id){
   if (String(id)=="r1"){
     alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
-    nameToSet = a_list[0][0];
-    idToAssign = a_list[0][5];
+    nameToSet = a_list[0]["name"];
+    idToAssign = a_list[0]["account_id"];
     //alert(nameToSet);
   }
 
   else if (String(id)=="r2"){
     //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
-    nameToSet = a_list[0][1];
-    idToAssign = a_list[0][6];
+    nameToSet = a_list[1]["name"];
+    idToAssign = a_list[1]["account_id"];
     //alert(nameToSet);
   }
 
   else if (String(id)=="r3"){
     //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
-    nameToSet = a_list[0][2];
-    idToAssign = a_list[0][7];
+    nameToSet = a_list[2]["name"];
+    idToAssign = a_list[2]["account_id"];
     //alert(nameToSet);
   }
 
   else if (String(id)=="r4"){
     //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
-    nameToSet = a_list[0][3];
-    idToAssign = a_list[0][8];
+    nameToSet = a_list[3]["name"];
+    idToAssign = a_list[3]["account_id"];
     //alert(nameToSet);
   }
 
   else if (String(id)=="r5"){
     //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
-    nameToSet = a_list[0][4];
-    idToAssign = a_list[0][9];
+    nameToSet = a_list[4]["name"];
+    idToAssign = a_list[4]["account_id"];
     //alert(nameToSet);
   }
 

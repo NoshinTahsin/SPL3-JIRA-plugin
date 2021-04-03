@@ -219,3 +219,23 @@ def upload_file(message=""):
       
     </div>
   </div>
+
+  text = None
+@app.route('/uploaded/', methods = ['GET', 'POST'])
+def uploaded(text=""):
+    #if request.method == 'POST':
+    skills=request.args.get('skills')
+    print("&&&&&&&&&&&&skills: ",skills)
+
+    experience=request.args.get('experience')
+    print("&&&&&&&&&&&&experience: ",experience)
+
+    resumeInfo = skills + experience
+    resumeInfo=remove_punctuation(resumeInfo)
+    bad_chars=['!','@', '#', '$','%', '^', '&','*','(',')','-','+']
+    resumeInfo = ''.join(i for i in resumeInfo if not i in bad_chars)
+    tokenized_resumeInfo=tokenize(resumeInfo)
+    print("*****************************88")
+    print(tokenized_resumeInfo)
+    
+    return "Uploaded info"
