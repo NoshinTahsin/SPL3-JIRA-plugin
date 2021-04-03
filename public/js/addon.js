@@ -148,6 +148,28 @@ function formChanged(){
          nm4.innerHTML = a_list[3]["name"];
          nm5.innerHTML = a_list[4]["name"];
 
+         var score1 = a_list[0]["score"];
+         var score2 = a_list[1]["score"];
+         var score3 = a_list[2]["score"];
+         var score4 = a_list[3]["score"];
+         var score5 = a_list[4]["score"];
+
+         var bar1_width = (score1/score1)*100;
+         var bar2_width = (score2/score1)*100;
+         var bar3_width = (score3/score1)*100;
+         var bar4_width = (score4/score1)*100;
+         var bar5_width = (score5/score1)*100;
+
+         document.getElementById("score_r1").style.width = String(bar1_width)+"%";
+         document.getElementById("score_r2").style.width = String(bar2_width)+"%";
+         document.getElementById("score_r3").style.width = String(bar3_width)+"%";
+         document.getElementById("score_r4").style.width = String(bar4_width)+"%";
+         document.getElementById("score_r5").style.width = String(bar5_width)+"%";
+
+
+
+
+
 
       }
   });  

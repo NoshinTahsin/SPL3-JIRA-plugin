@@ -43,6 +43,7 @@ body{
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -77,10 +78,12 @@ body{
 
 #targetIssue{
   padding-top: 40px;
+  padding-right: 30px;
 }
 
 #ShowSuggestionList{
   padding-top: 40px;
+  padding-right: 50px;
 }
 
 .button-color{
@@ -90,4 +93,9 @@ body{
 
 .assigneeTable{
   
+}
+
+#score_r1, #score_r2, #score_r3, #score_r4, #score_r5{
+  border-right: 5px;
+  padding-right: 5px;
 }

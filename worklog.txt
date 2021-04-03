@@ -22,7 +22,8 @@ issue description na dile bari khay, empty thakleo kaj korte hbe
 already assigned issue te assign korle ki hoy? - hoy, je assigned take shurute dekhay - done - Alhamdulillah
 already assigned alert dekhano jay - pore
 
-UI enhancement - db-updatingggggggg-db-updated! - then frontend fix
+UI enhancement - db-updatingggggggg-db-updated! - done
+then frontend fix
 then demo record - Record kore vaider pathano, approval neya 
 report generation - exciting requirement - report generation - pdf or text 
 
