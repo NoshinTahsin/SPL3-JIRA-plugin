@@ -1,0 +1,8 @@
+issue groups explain korte hbe - same type er kaj - ss diye
+
+# create new issue and check if new terms are updated in database
+
+done issue er data o thake corpus e 
+
+age atleast ekta entry thakte hbe jira er issue te jeta pdm k korte hbe, karon account id access kora jay na
+word cloud generate korte pari - helping tool

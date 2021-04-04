@@ -319,6 +319,42 @@ function formSubmitted(){
   }, 2000);
 }
 
+function generateSummary() {
+  //valueToSet = document.getElementById("r1").innerHTML;
+  //alert(valueToSet);
+  //alert("Assignee Changed")
+
+  //document.getElementById("r1").innerHTML = "Assignee Changed!";
+  var generateSummaryUrl  = "http://127.0.0.1:5000/summary/";
+  
+  AP.request(generateSummaryUrl, {
+    success: function(responseText){
+    var summaryList = JSON.parse(responseText);
+    alert(summaryList);
+
+    var totalCount = summaryList[0];
+    var yesCount = summaryList[1];
+    var noCount = summaryList[2];
+
+    sb1_width = (totalCount/totalCount)*100;
+    sb2_width = (yesCount/totalCount)*100;
+    sb3_width = (noCount/totalCount)*100;
+
+    document.getElementById("summaryBar").style.display="block";
+    
+    document.getElementById("countText1").innerHTML = String(sb1_width)+"%";
+    document.getElementById("countText2").innerHTML = String(sb2_width)+"%";
+    document.getElementById("countText3").innerHTML = String(sb3_width)+"%";
+
+    document.getElementById("sb1").style.width = String(sb1_width)+"%";
+    document.getElementById("sb2").style.width = String(sb2_width)+"%";
+    document.getElementById("sb3").style.width = String(sb3_width)+"%";
+
+    }
+  });
+
+}
+
 function openTab(evt, tabName) {
   // Declare all variables
   var i, tabcontent, tablinks;
@@ -335,16 +371,17 @@ function openTab(evt, tabName) {
     document.getElementById("NewDev").style.display = "none";
   }
 
-  /*if(tabName=="ShowAllUnassigned"){
-  	document.getElementById(tabName).style.display = "block";
-    document.getElementById("Suggestion").style.display = "none";
-    document.getElementById("NewDev").style.display = "none";
-  }*/
-
   if(tabName=="NewDev"){
   	document.getElementById(tabName).style.display = "block";
     document.getElementById("Suggestion").style.display = "none";
     //document.getElementById("ShowAllUnassigned").style.display = "none";
+  }
+
+  if(tabName=="ReportGeneration"){
+    document.getElementById("summaryBar").style.display="none";
+  	document.getElementById(tabName).style.display = "block";
+    document.getElementById("Suggestion").style.display = "none";
+    document.getElementById("NewDev").style.display = "none";
   }
   //evt.currentTarget.className += " active";
   evt.currentTarget.className += " w3-blue";

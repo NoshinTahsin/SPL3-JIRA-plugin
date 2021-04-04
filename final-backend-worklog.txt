@@ -1,0 +1,12 @@
+initiallly, constructCorpus ()
+db te data rakhbe
+already existing collection thakle create korbena ar, na thakle create korbe
+name o khuje paile update korbe, na paile notun create korbe
+form click er pore db thke data ene calculation korbe - kokhn kokhn kottheke data anbe eta specify korte hbe
+suggestion show korar pore suggestion history db te store korbe, kar nam clicked hoise shetao store korbe, 
+pore report generation e kaaj e lagbe
+resume upload korle naam diye store korbe, pore take task assign korbo, ager data plus resume er data er upor base kore
+jokhn initially ekebare kono data e nai, jodio eta hbe na, tokhn notify korbe j vai data nai
+eta hbe jodi selise shb data delete kore dey arki :3 
+integrate db code in app.py - Alhamdulillah Done
+

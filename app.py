@@ -18,6 +18,7 @@ from datetime import datetime
 import pymongo
 import re
 import string 
+import pandas as pd 
 import time
 from datetime import datetime, timedelta
 
@@ -842,6 +843,70 @@ def constructCorpus():
     data_processing()
 
     return ('', 204)  
+
+@app.route('/summary/', methods=['GET','POST'])
+def summary():
+    
+    issue_id_list = []
+    project_id_list = []
+    assigning_date_list = []
+    suggestion_list = []
+    assignee_id_list = []
+    YesNoList = []
+
+    mycol = mydb["Suggestions"]
+    if mycol.count_documents({})>0:
+        mydoc = mycol.find()
+        for x in mydoc:
+            #tempMap = {}
+            #pprint(x)
+            issue_id_list.append(x["issue_id"])
+            project_id_list.append(x["project_id"])
+            assigning_date_list.append(str(x["assigning_date"]))
+            suggestion_list.append(x['suggestion'])
+            assignee_id_list.append(x["assignee_id"])
+            id_list = []
+            
+            for s in x['suggestion']:
+                id_list.append(s['account_id'])
+                
+            if x["assignee_id"] in id_list:
+                YesNoList.append("Yes")
+            else:
+                YesNoList.append("No")
+
+    # dictionary of lists 
+    dict = {'IssueID': issue_id_list, 'ProjectID': project_id_list, 'Assigning Date': assigning_date_list, 'Suggestions':suggestion_list,'Assigneed To':assignee_id_list, 'Suggestion Followed':YesNoList} 
+        
+    df = pd.DataFrame(dict)
+
+    totalCount = df['Suggestion Followed'].value_counts()
+    #print(totalCount)
+
+    YesCount = 0
+    NoCount = 0
+
+    for x in df['Suggestion Followed']:
+        if x=="Yes":
+            YesCount = YesCount + 1
+        else:
+            NoCount = NoCount + 1
+
+    #print(YesCount)
+    #print(NoCount)
+
+    reportSummary = []
+    reportSummary.append(int(totalCount))
+    reportSummary.append(YesCount)
+    reportSummary.append(NoCount)
+
+    print(">>>>>>>>>>>>>>>>>>>>>>>")
+    print(reportSummary)
+    #specify path
+    df.to_csv(r'C:/Users/ASUS/Desktop/SPL3/Resume/VSReport.csv', index=False)
+    #summary = [3,3,0]
+    s=json.dumps(reportSummary)
+    return s
 
 if __name__ == '__main__':
     app.run(debug=True)

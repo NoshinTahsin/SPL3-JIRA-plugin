@@ -7,8 +7,8 @@
 <!-- Tab links -->
 <div class="tab">
   <button class="tablinks w3-blue" onclick="openTab(event, 'Suggestion')">Search Suggestion</button>
-  <!--<button class="tablinks" onclick="openTab(event, 'ShowAllUnassigned')">All Unassigned Issues</button>-->
   <button class="tablinks" onclick="openTab(event, 'NewDev')">Resume Upload</button>
+  <button class="tablinks" onclick="openTab(event, 'ReportGeneration')">Summary generation</button>
 </div>
 
 <!-- Tab content -->
@@ -192,10 +192,86 @@
 
 </div>
 
+<div id="ReportGeneration" class="tabcontent">
 
 <div style="display :flex;">
+   <button class="btn btn-primary" type="submit" value="Submit" onclick="generateSummary()">
+     Generate Summary
+   </button>
+</div>
+
+<div class="container" id="summaryBar" style="display: none;">
+  <div class="jumbotron">
+
+    <p>Summary of Previous Suggestions</p>
+    <table>
+      <thead></thead>
+    <tbody>
+
+
+      <tr>
+      <td>
+        Total Suggestions
+      </td>
+
+      <td id="countText1">
+
+      </td>
+      <td>
+        <div class="w3-light-grey w3-round-xlarge">
+          <div class="w3-container w3-blue w3-round-xlarge" id="sb1" style="width:80%;height:10px"></div>
+        </div>
+      </td>
+      
+    </tr>
+    <tr>
+      <td>
+        Suggestion Followed
+      </td>
+      <td id="countText2">
+
+      </td>
+      <td>
+        <div class="w3-light-grey w3-round-xlarge">
+          <div class="w3-container w3-blue w3-round-xlarge" id="sb2" style="width:80%;height:10px"></div>
+        </div>
+      </td>
+      
+    </tr>
+
+    <tr>
+      <td>
+        Suggestion Not Followed
+      </td>
+      <td id="countText3">
+
+      </td>
+      <td>
+        <div class="w3-light-grey w3-round-xlarge">
+          <div class="w3-container w3-blue w3-round-xlarge" id="sb3" style="width:80%;height:10px"></div>
+        </div>
+      </td>
+      
+    </tr>
+
+
+
+
+    </tbody>
+    </table>
+    
+    
+ 
+
+  
+  </div>     
+</div>
+
+
    
 </div>
+
+
 
 
 

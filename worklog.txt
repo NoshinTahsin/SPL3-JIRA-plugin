@@ -23,9 +23,10 @@ already assigned issue te assign korle ki hoy? - hoy, je assigned take shurute d
 already assigned alert dekhano jay - pore
 
 UI enhancement - db-updatingggggggg-db-updated! - done
-then frontend fix
+then frontend fix - done
+
 then demo record - Record kore vaider pathano, approval neya 
-report generation - exciting requirement - report generation - pdf or text 
+report generation - exciting requirement - report generation - pdf or text - csv - pandas dataframe
 
 Final Report 
 Presentation 
