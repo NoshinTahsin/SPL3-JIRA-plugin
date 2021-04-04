@@ -848,15 +848,21 @@ s = None
 @app.route('/summary/', methods=['GET','POST'])
 def summary(s=""):
     
-    if request.method == "GET":
-        path=request.args.get('pathname')
+        #if request.method == "GET":
+        #path=request.args.get('pathname')
 
         issue_id_list = []
         project_id_list = []
         assigning_date_list = []
-        suggestion_list = []
+        #suggestion_list = []
+        suggestion_list_1 = []
+        suggestion_list_2 = []
+        suggestion_list_3 = []
+        suggestion_list_4 = []
+        suggestion_list_5 = []
         assignee_id_list = []
         YesNoList = []
+        assignee_name_list = []
 
         mycol = mydb["Suggestions"]
         if mycol.count_documents({})>0:
@@ -867,8 +873,21 @@ def summary(s=""):
                 issue_id_list.append(x["issue_id"])
                 project_id_list.append(x["project_id"])
                 assigning_date_list.append(str(x["assigning_date"]))
-                suggestion_list.append(x['suggestion'])
+                suggestion_list_1.append(x['suggestion'][0]["name"])
+                suggestion_list_2.append(x['suggestion'][1]["name"])
+                suggestion_list_3.append(x['suggestion'][2]["name"])
+                suggestion_list_4.append(x['suggestion'][3]["name"])
+                suggestion_list_5.append(x['suggestion'][4]["name"])
                 assignee_id_list.append(x["assignee_id"])
+
+                mycol = mydb["Assignee"]
+                mydoc = mycol.find()
+                for y in mydoc:
+                    if y["assignee_id"]==x["assignee_id"]:
+                        x_name = y["name"]
+
+                assignee_name_list.append(x_name)
+
                 id_list = []
                 
                 for s in x['suggestion']:
@@ -880,7 +899,8 @@ def summary(s=""):
                     YesNoList.append("No")
 
         # dictionary of lists 
-        dict = {'IssueID': issue_id_list, 'ProjectID': project_id_list, 'Assigning Date': assigning_date_list, 'Suggestions':suggestion_list,'Assigneed To':assignee_id_list, 'Suggestion Followed':YesNoList} 
+        dict = {'IssueID': issue_id_list, 'ProjectID': project_id_list, 'Assigning Date': assigning_date_list, 'Rank-1':suggestion_list_1,'Rank-2':suggestion_list_2,'Rank-3':suggestion_list_3, 'Rank-4':suggestion_list_4, 'Rank-5':suggestion_list_5, 'Assignee':assignee_name_list, 'Suggestion Followed':YesNoList} 
+        #dict = {'IssueID': issue_id_list, 'ProjectID': project_id_list, 'Assigning Date': assigning_date_list, 'Suggestion Followed':YesNoList} 
             
         df = pd.DataFrame(dict)
 
@@ -911,6 +931,7 @@ def summary(s=""):
         now = datetime.now()
         filedate = now.strftime("%Y-%m-%d")
         filename = "Jira-Plugin-Summary-"+filedate+".csv"
+        path = "C:/Users/ASUS/Downloads/"
         pathstring = path + filename
         df.to_csv(pathstring, index=False)
         #summary = [3,3,0]

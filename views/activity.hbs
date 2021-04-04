@@ -7,8 +7,8 @@
 <!-- Tab links -->
 <div class="tab">
   <button class="tablinks w3-blue" onclick="openTab(event, 'Suggestion')">Search Suggestion</button>
-  <button class="tablinks" onclick="openTab(event, 'NewDev')">Resume Upload</button>
-  <button class="tablinks" onclick="openTab(event, 'ReportGeneration')">Summary generation</button>
+  <button class="tablinks" onclick="openTab(event, 'NewDev')">Upload Resume</button>
+  <button class="tablinks" onclick="openTab(event, 'ReportGeneration')">Generate Summary</button>
 </div>
 
 <!-- Tab content -->
@@ -42,7 +42,7 @@
 </form>-->
 
 <div class="alert alert-danger" id="IssueNotExist" style="display:none">
-    <strong>No Such Issue Exists!</strong> 
+    <strong>No Such Issue Exists or You Don't Have Access Permission To That Issue!</strong> 
 </div>
 
 <div class="alert alert-success" id="AssigneeChangedAlert" style="display:none">
@@ -145,12 +145,16 @@
 
 <div id="NewDev" class="tabcontent">
   
-  <div>
+  <div style="margin: 15px;">
     <form action="http://127.0.0.1:5000/getfile" method="POST" enctype="multipart/form-data"
     id="myForm" style="display:block">
           <div class="form-group">
-            <label for="usr">Name:</label>
-            <input type="text" class="form-control" name="username" id="usr">
+            <label for="usr"><h3>
+              Enter the name of the new developer here
+            </h3></label>
+            <input type="text" class="form-control" 
+            name="username" id="usr"
+            placeholder="Noshin Tahsin" style="margin-top: 10px;">
           </div>
           Upload Resume (Must Be In Text Format) <input type="file" name="myfile" id="fileInput"><br>
           <input id="buttonReset" class="btn btn-primary" type="submit" value="Submit" onclick="formSubmitted()">
@@ -166,8 +170,8 @@
 
 <div id="ReportGeneration" class="tabcontent">
 
-  <h3 style="align: center;">Enter the path where the summary file should be downloaded</h3>
-  <!--method="post" action="/ask"-->
+  <h3 style="align: center;margin:20px;">Download Summary File (.csv)</h3>
+  <!--method="post" action="/ask"
   <form class="aui" id="SaveLocationForm">
       <label for="pathname"> </label>
       <input 
@@ -176,15 +180,18 @@
         id="pathname" 
         name="pathname" 
         placeholder="filepath">
-      <button 
+  </form>
+  <button 
       id="buttonReset" 
       form="pathname" 
       class="btn btn-primary" 
-      type="submit" value="Submit" onclick="generateSummary()">Generate Summary</button>
-  </form>
-
-  
-
+      onclick="generateSummary()">Generate Summary</button>-->
+    
+  <button class="btn" id="summaryButton"
+  style="margin: 20px;"
+  type="submit" value="Submit" 
+  onclick="generateSummary()">
+  <i class="fa fa-download"></i>Download Summary</button>
 
 <div class="alert alert-success" id="fileAlert" style="display:none">
     <strong>Summary File Downloaded in the specified location!</strong> 

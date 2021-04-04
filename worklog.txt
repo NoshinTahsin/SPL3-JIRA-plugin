@@ -25,10 +25,12 @@ already assigned alert dekhano jay - pore
 UI enhancement - db-updatingggggggg-db-updated! - done
 then frontend fix - done
 
-then demo record - Record kore vaider pathano, approval neya 
-report generation - exciting requirement - report generation - pdf or text - csv - pandas dataframe
+then demo record - Record kore vaider pathano, approval neya - done
+report generation - exciting requirement - report generation - pdf or text - csv - pandas dataframe - done
 
-Final Report 
+Final Report - likhtesi
+Testing - Selenium
+Deploy - Heroku
 Presentation 
 Validation 
 

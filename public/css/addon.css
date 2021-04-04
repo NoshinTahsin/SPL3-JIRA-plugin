@@ -105,3 +105,18 @@ body{
 #sb1,#sb2,#sb3{
   margin: 15px ;
 }
+
+#summaryButton {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+/* Darker background on mouse-over */
+#summaryButton:hover {
+  background-color: RoyalBlue;
+

@@ -184,9 +184,9 @@ function rowClicked(id){
   //alert(a_list);
   var idToAssign = "";
   //var rowValue = document.getElementById(id).innerHTML;
-  alert("row clicked for rowID: "+id);
+  //alert("row clicked for rowID: "+id);
   if (String(id)=="r1"){
-    alert("dhukse");
+    //alert("dhukse");
     //valueToSet = document.getElementById("name_r1").innerHTML;
     nameToSet = a_list[0]["name"];
     idToAssign = a_list[0]["account_id"];
@@ -321,11 +321,11 @@ function formSubmitted(){
 
 function generateSummary() {
 
-  pathname = document.getElementsByName("pathname")[0].value;
+  //pathname = document.getElementsByName("pathname")[0].value;
 
   var generateSummaryUrl  = "http://127.0.0.1:5000/summary/";
-  generateSummaryUrl=generateSummaryUrl+"?pathname=";
-  generateSummaryUrl=generateSummaryUrl+pathname;
+  //generateSummaryUrl=generateSummaryUrl+"?pathname=";
+  //generateSummaryUrl=generateSummaryUrl+pathname;
   
   AP.request(generateSummaryUrl, {
     success: function(responseText){
@@ -336,7 +336,7 @@ function generateSummary() {
 
   setTimeout(function(){ 
     document.getElementById("fileAlert").style.display = "none";
-    document.getElementById("SaveLocationForm").reset();
+    document.getElementById("buttonReset").reset();
   }, 2000);
 
     var totalCount = summaryList[0];
