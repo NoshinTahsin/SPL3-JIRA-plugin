@@ -102,7 +102,7 @@ function formChanged(){
   AP.request(suggestionUrl, {
       success: function(responseText){
       a_list = JSON.parse(responseText);
-      alert(a_list);
+      //alert(a_list);
       
       document.getElementById("ShowSuggestionList").style.display = "block";
 
@@ -278,7 +278,7 @@ function buttonClicked() {
   AP.request(changeAssigneeUrl, {
     success: function(responseText){
     var rt = JSON.parse(responseText);
-    alert(rt);
+    //alert(rt);
     }
   });
 
@@ -320,17 +320,24 @@ function formSubmitted(){
 }
 
 function generateSummary() {
-  //valueToSet = document.getElementById("r1").innerHTML;
-  //alert(valueToSet);
-  //alert("Assignee Changed")
 
-  //document.getElementById("r1").innerHTML = "Assignee Changed!";
+  pathname = document.getElementsByName("pathname")[0].value;
+
   var generateSummaryUrl  = "http://127.0.0.1:5000/summary/";
+  generateSummaryUrl=generateSummaryUrl+"?pathname=";
+  generateSummaryUrl=generateSummaryUrl+pathname;
   
   AP.request(generateSummaryUrl, {
     success: function(responseText){
     var summaryList = JSON.parse(responseText);
-    alert(summaryList);
+    //alert(summaryList);
+
+    document.getElementById("fileAlert").style.display = "block";
+
+  setTimeout(function(){ 
+    document.getElementById("fileAlert").style.display = "none";
+    document.getElementById("SaveLocationForm").reset();
+  }, 2000);
 
     var totalCount = summaryList[0];
     var yesCount = summaryList[1];

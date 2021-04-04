@@ -136,29 +136,6 @@
     </td>
   </tr>
 
-
-	<!--<tr>
-    <button class="aui-button aui-button-primary" id="r1" onclick="buttonClicked()">
-    </button>
-  </tr>
-  <tr>
-    <button class="aui-button aui-button-primary" id="r2">
-    </button>
-  </tr>
-  	<tr>
-    <button class="aui-button aui-button-primary" id="r3">
-    </button>
-  </tr>
-  	<tr>
-    <button class="aui-button aui-button-primary" id="r4">
-    </button>
-  </tr>
-  	<tr>
-    <button class="aui-button aui-button-primary" id="r5">
-    </button>
-  </tr>-->
-
-
 </tbody>
 </table>
 </div>
@@ -166,13 +143,8 @@
 </div>
 
 
-<!--<div id="ShowAllUnassigned" class="tabcontent">
-  <p>Show all unassigned issues here</p>
-</div>-->
-
 <div id="NewDev" class="tabcontent">
-  <!--<h3>Upload Resume For New Developers</h3>
-  <div style="position: absolute; top: 16px; right: 16px; font-size: 14px; flex:20%">-->
+  
   <div>
     <form action="http://127.0.0.1:5000/getfile" method="POST" enctype="multipart/form-data"
     id="myForm" style="display:block">
@@ -194,13 +166,31 @@
 
 <div id="ReportGeneration" class="tabcontent">
 
-<div style="display :flex;">
-   <button class="btn btn-primary" type="submit" value="Submit" onclick="generateSummary()">
-     Generate Summary
-   </button>
+  <h3 style="align: center;">Enter the path where the summary file should be downloaded</h3>
+  <!--method="post" action="/ask"-->
+  <form class="aui" id="SaveLocationForm">
+      <label for="pathname"> </label>
+      <input 
+        class="text long-field" 
+        type="text" 
+        id="pathname" 
+        name="pathname" 
+        placeholder="filepath">
+      <button 
+      id="buttonReset" 
+      form="pathname" 
+      class="btn btn-primary" 
+      type="submit" value="Submit" onclick="generateSummary()">Generate Summary</button>
+  </form>
+
+  
+
+
+<div class="alert alert-success" id="fileAlert" style="display:none">
+    <strong>Summary File Downloaded in the specified location!</strong> 
 </div>
 
-<div class="container" id="summaryBar" style="display: none;">
+<div class="container" id="summaryBar" style="display: none;margin-top:15px">
   <div class="jumbotron">
 
     <p>Summary of Previous Suggestions</p>
